@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pabia NICE Conference – 12 września 2026, Pabianice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f5f7ff;
+    --dark: #0d0e1c;
+    --surface: #ffffff;
+    --border: rgba(0,0,0,0.07);
+    --blue-deep: #1a2cff;
+    --blue-mid: #4f86f7;
+    --blue-light: #4fc3f7;
+    --purple: #7b2fff;
+    --orange: #ff8c00;
+    --yellow: #ffd93d;
+    --pink: #ff4f7b;
+    --green: #00d68f;
+    --text: #0d0e1c;
+    --muted: #5a607a;
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --grad: linear-gradient(135deg, #1a2cff 0%, #7b2fff 50%, #4fc3f7 100%);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem var(--gutter);
+    background: rgba(245,247,255,0.93);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+  }
+
+  .nav-logo-text {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    color: var(--dark);
+  }
+  .nav-logo-text .nice {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.4rem 0.75rem;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); background: rgba(0,0,0,0.04); }
+
+  .nav-cta {
+    background: var(--grad) !important;
+    color: white !important;
+    padding: 0.5rem 1.25rem !important;
+    border-radius: 100px !important;
+    font-weight: 700 !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 8px 24px rgba(26,44,255,0.35) !important;
+    background: var(--grad) !important;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 300;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem var(--gutter) 5rem;
+    position: relative;
+    overflow: hidden;
+    background: var(--dark);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 80% 20%, rgba(79,195,247,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 10% 80%, rgba(123,47,255,0.2) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 50% 50%, rgba(26,44,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.85);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.55rem 1.1rem;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.1s forwards;
+    backdrop-filter: blur(8px);
+  }
+
+  .badge-dot {
+    width: 7px; height: 7px;
+    background: var(--yellow);
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+  .hero h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: white;
+    margin-bottom: 0.4rem;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.2s forwards;
+  }
+
+  .hero h1 .nice-word {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.32s forwards;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    color: rgba(255,255,255,0.6);
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.42s forwards;
+  }
+
+  .hero-sub strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.55s forwards;
+    margin-bottom: 3.5rem;
+  }
+
+  .btn-grad {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--grad);
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-grad:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(26,44,255,0.45);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.85);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.15);
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+    backdrop-filter: blur(6px);
+  }
+
+  .btn-ghost:hover {
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.3);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.68s forwards;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-num {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 1.8rem;
+    letter-spacing: -0.04em;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    font-weight: 500;
+    margin-top: 0.2rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 5.5rem var(--gutter); }
+
+  .section-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.6rem;
+    display: inline-block;
+  }
+
+  .section-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .section-desc {
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 560px;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    background: white;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-lead {
+    font-size: 1.35rem;
+    font-weight: 700;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-lead .nice-inline {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .about-body p {
+    color: var(--muted);
+    font-size: 1.02rem;
+    line-height: 1.85;
+    font-weight: 300;
+    margin-bottom: 1.1rem;
+  }
+
+  .about-body p strong { color: var(--text); font-weight: 600; }
+
+  .about-values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .value-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.25rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .value-card:hover {
+    border-color: rgba(26,44,255,0.25);
+    transform: translateY(-2px);
+  }
+
+  .value-icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+
+  .value-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .value-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+  /* ── AGENDA ── */
+  .agenda { background: var(--bg); }
+
+  .agenda-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+
+  .agenda-sidebar {
+    position: sticky;
+    top: 5rem;
+  }
+
+  .agenda-summary {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .agenda-summary-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .summary-row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.88rem;
+    color: var(--muted);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .summary-row:last-child { border-bottom: none; }
+  .summary-row span:first-child { font-size: 1rem; flex-shrink: 0; }
+
+  .agenda-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .agenda-item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    position: relative;
+    padding-bottom: 1rem;
+  }
+
+  .agenda-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 90px;
+    top: 2rem;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+    margin-left: calc(1.25rem / 2);
+    transform: translateX(-50%);
+  }
+
+  .agenda-time {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--muted);
+    padding-top: 1rem;
+    letter-spacing: 0.02em;
+    text-align: right;
+    padding-right: 0.25rem;
+  }
+
+  .agenda-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+
+  .agenda-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  }
+
+  .agenda-card.keynote {
+    background: var(--dark);
+    border-color: transparent;
+    background-image: linear-gradient(135deg, rgba(26,44,255,0.15) 0%, rgba(123,47,255,0.1) 100%);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .agenda-card.break {
+    background: rgba(255,217,61,0.08);
+    border-color: rgba(255,217,61,0.25);
+  }
+
+  .agenda-card.panel-card {
+    background: linear-gradient(135deg, rgba(26,44,255,0.04) 0%, rgba(123,47,255,0.04) 100%);
+    border-color: rgba(26,44,255,0.15);
+  }
+
+  .agenda-card.open-slot {
+    background: var(--bg);
+    border-style: dashed;
+    border-color: rgba(0,0,0,0.12);
+  }
+
+  .agenda-card.closing {
+    background: var(--dark);
+    border-color: transparent;
+  }
+
+  .agenda-tag {
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue-mid);
+    margin-bottom: 0.2rem;
+  }
+
+  .agenda-card.keynote .agenda-tag { color: var(--yellow); }
+  .agenda-card.break .agenda-tag { color: #8a6d00; }
+  .agenda-card.panel-card .agenda-tag { color: var(--purple); }
+  .agenda-card.open-slot .agenda-tag { color: var(--muted); }
+  .agenda-card.closing .agenda-tag { color: rgba(255,255,255,0.5); }
+
+  .agenda-card-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 0.97rem;
+    line-height: 1.3;
+    color: var(--text);
+  }
+
+  .agenda-card.keynote .agenda-card-title,
+  .agenda-card.closing .agenda-card-title { color: white; }
+
+  .agenda-card.break .agenda-card-title { color: #5a4a00; }
+
+  .agenda-speaker {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
+  .agenda-card.keynote .agenda-speaker { color: rgba(255,255,255,0.55); }
+
+  .agenda-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-top: 0.5rem;
+    display: none;
+  }
+
+  .agenda-card.expanded .agenda-desc { display: block; }
+  .agenda-card.keynote .agenda-desc { color: rgba(255,255,255,0.5); }
+
+  .agenda-expand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--blue-mid);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 0.4rem;
+    font-family: 'Nunito', sans-serif;
+    transition: color 0.2s;
+  }
+
+  .agenda-expand:hover { color: var(--blue-deep); }
+  .agenda-card.keynote .agenda-expand { color: rgba(255,255,255,0.5); }
+  .agenda-card.keynote .agenda-expand:hover { color: white; }
+
+  /* ── SPEAKERS ── */
+  .speakers { background: white; border-top: 1px solid var(--border); }
+
+  .speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .speaker-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1.75rem;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .speaker-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(26,44,255,0.2);
+    box-shadow: 0 12px 32px rgba(26,44,255,0.08);
+  }
+
+  .speaker-avatar {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--grad);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+  }
+
+  .speaker-name {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .speaker-role {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+  }
+
+  .speaker-topic {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+    padding: 0.6rem 0.8rem;
+    background: white;
+    border-radius: 8px;
+    border-left: 3px solid;
+    border-left-color: var(--blue-mid);
+  }
+
+  .speaker-card:nth-child(2) .speaker-topic { border-left-color: var(--purple); }
+  .speaker-card:nth-child(3) .speaker-topic { border-left-color: var(--orange); }
+  .speaker-card:nth-child(4) .speaker-topic { border-left-color: var(--pink); }
+  .speaker-card:nth-child(5) .speaker-topic { border-left-color: var(--green); }
+  .speaker-card:nth-child(6) .speaker-topic { border-left-color: var(--yellow); }
+
+  .speaker-type {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    background: rgba(26,44,255,0.08);
+    color: var(--blue-deep);
+    margin-bottom: 0.6rem;
+  }
+
+  .speaker-type.keynote-badge {
+    background: rgba(123,47,255,0.08);
+    color: var(--purple);
+  }
+
+  .speaker-type.panel-badge {
+    background: rgba(0,214,143,0.08);
+    color: #008a5e;
+  }
+
+  /* ── TICKET ── */
+  .tickets { background: var(--dark); position: relative; overflow: hidden; }
+
+  .tickets::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 85% 20%, rgba(79,195,247,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 15% 80%, rgba(123,47,255,0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .tickets .section-eyebrow { color: rgba(255,255,255,0.5); -webkit-text-fill-color: rgba(255,255,255,0.5); }
+  .tickets .section-title { color: white; }
+
+  .tickets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ticket-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .ticket-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,0.2);
+  }
+
+  .ticket-card.featured {
+    background: white;
+    border-color: transparent;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+
+  .ticket-name {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .ticket-card.featured .ticket-name { color: var(--muted); }
+
+  .ticket-price {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 2.8rem;
+    letter-spacing: -0.04em;
+    color: white;
+    line-height: 1;
+  }
+
+  .ticket-card.featured .ticket-price { color: var(--text); }
+
+  .ticket-price span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.5;
+    margin-left: 0.2rem;
+  }
+
+  .ticket-desc {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  .ticket-card.featured .ticket-desc { color: var(--muted); }
+
+  .ticket-perks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .ticket-perks li {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.65);
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+  }
+
+  .ticket-card.featured .ticket-perks li { color: var(--muted); }
+
+  .ticket-perks li::before {
+    content: '✓';
+    color: var(--green);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  .ticket-btn {
+    display: block;
+    text-align: center;
+    padding: 0.85rem;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: 'Nunito', sans-serif;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .ticket-card.featured .ticket-btn {
+    background: var(--grad);
+    color: white;
+    border: none;
+  }
+
+  .ticket-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+
+  .ticket-card.featured .ticket-btn:hover {
+    box-shadow: 0 10px 30px rgba(26,44,255,0.45);
+  }
+
+  .ticket-note {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── PARTNERS ── */
+  .partners { background: var(--bg); }
+
+  .partners-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-bottom: 3rem;
+  }
+
+  .partner-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .partner-tier {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .partner-tier-badge {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .tier-gold .partner-tier-badge { background: rgba(255,217,61,0.15); }
+  .tier-silver .partner-tier-badge { background: rgba(79,195,247,0.1); }
+  .tier-patron .partner-tier-badge { background: rgba(0,214,143,0.1); }
+
+  .partner-tier-name {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .partner-tier-desc { font-size: 0.8rem; color: var(--muted); }
+
+  .partners-cta-box {
+    background: var(--dark);
+    border-radius: 20px;
+    padding: 2rem;
+    color: white;
+  }
+
+  .partners-cta-box h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .partners-cta-box p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+  }
+
+  .partners-placeholder {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    border-style: dashed;
+  }
+
+  .partners-placeholder p {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  /* ── FAQ ── */
+  .faq { background: white; border-top: 1px solid var(--border); }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 5rem;
+    margin-top: 3rem;
+    align-items: start;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .faq-item {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .faq-item:hover { border-color: rgba(26,44,255,0.2); }
+
+  .faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--text);
+    text-align: left;
+    transition: background 0.2s;
+  }
+
+  .faq-question:hover { background: var(--bg); }
+
+  .faq-icon {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    transition: transform 0.3s, background 0.2s;
+  }
+
+  .faq-item.open .faq-icon {
+    transform: rotate(45deg);
+    background: rgba(26,44,255,0.08);
+    border-color: rgba(26,44,255,0.2);
+    color: var(--blue-deep);
+  }
+
+  .faq-answer {
+    display: none;
+    padding: 0 1.25rem 1.1rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .faq-item.open .faq-answer { display: block; }
+
+  /* ── VENUE ── */
+  .venue { background: var(--bg); }
+
+  .venue-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .venue-map {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    overflow: hidden;
+    height: 340px;
+  }
+
+  .venue-map iframe { width: 100%; height: 100%; border: none; }
+
+  .venue-details { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  .venue-detail { display: flex; gap: 1rem; align-items: flex-start; }
+
+  .venue-detail-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    background: rgba(26,44,255,0.07);
+  }
+
+  .venue-detail-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.2rem;
+  }
+
+  .venue-detail-value { font-size: 0.97rem; font-weight: 500; color: var(--text); }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--dark);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(79,195,247,0.08) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .cta-inner { position: relative; z-index: 1; }
+
+  .cta-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: white;
+    margin-bottom: 1.25rem;
+  }
+
+  .cta-title .nice-word { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+  .cta-desc {
+    color: rgba(255,255,255,0.5);
+    font-size: 1.05rem;
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 2rem var(--gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  footer p { color: rgba(255,255,255,0.3); font-size: 0.78rem; }
+  footer a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.78rem; transition: color 0.2s; }
+  footer a:hover { color: rgba(255,255,255,0.8); }
+  .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .about-grid, .partners-intro, .faq-grid, .venue-grid, .agenda-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .agenda-sidebar { position: static; }
+    .about-values { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .hamburger { display: flex; }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      position: fixed;
+      inset: 0;
+      background: rgba(13,14,28,0.97);
+      backdrop-filter: blur(24px);
+      justify-content: center;
+      align-items: center;
+      z-index: 250;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li { width: 100%; text-align: center; }
+    .nav-links a { display: block; padding: 1rem 2rem; font-size: 1.15rem; color: rgba(255,255,255,0.8); border-radius: 0; }
+    .nav-links a:hover { color: white; background: rgba(255,255,255,0.05); }
+    .nav-cta { background: var(--grad) !important; color: white !important; border-radius: 100px !important; margin: 0.5rem 2rem 0 !important; padding: 0.85rem 2rem !important; }
+    .hero h1 { font-size: 3.2rem; }
+    .about-values { grid-template-columns: 1fr; }
+    .tickets-grid, .speakers-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .agenda-item { grid-template-columns: 70px 1fr; gap: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-text">Pabia<span class="nice">NICE</span></span>
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#o-konferencji">O konferencji</a></li>
+    <li><a href="#agenda">Agenda</a></li>
+    <li><a href="#prelegenci">Prelegenci</a></li>
+    <li><a href="#partnerzy">Partnerzy</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#bilety" class="nav-cta">Kup bilet →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      12 września 2026 · Pabianice · Miejski Ośrodek Kultury
+    </div>
+
+    <h1>Pabia <span class="nice-word">NICE</span><br>Conference</h1>
+
+    <p class="hero-tagline">Konferencja dla miłych ludzi. Z IT i nie tylko.</p>
+
+    <p class="hero-sub">
+      Znajdź odpowiedź czy <strong>Twoja kariera zmierza w dobrym kierunku.</strong><br>
+      Bez deep-dive'ów w technologię – idee, ludzie i doświadczenia, które zmieniają sposób pracy i myślenia.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#bilety" class="btn-grad">Kup bilet →</a>
+      <a href="#agenda" class="btn-ghost">Zobacz agendę</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">8</span>
+        <span class="stat-label">Prelegentów</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">~200</span>
+        <span class="stat-label">Uczestników</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">50 zł</span>
+        <span class="stat-label">Od</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">4,5h</span>
+        <span class="stat-label">Programu</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="o-konferencji">
+  <div class="about-grid">
+    <div class="reveal">
+      <p class="section-eyebrow">O konferencji</p>
+      <h2 class="section-title">IT może być<br>przyjemniejsze.</h2>
+      <div class="about-body">
+        <p class="about-lead">
+          <span class="nice-inline">Pabia NICE Conference</span> – konferencja dla miłych ludzi. Z IT i nie tylko. Przyjdź i znajdź odpowiedź czy Twoja kariera zmierza w dobrym kierunku!
+        </p>
+        <p>
+          Gra słów w nazwie nie jest przypadkiem. <strong>PabiaNICE</strong> to Pabianice + angielskie „nice". Wierzymy, że konferencje IT mogą być merytoryczne i ludzkie jednocześnie – bez korporacyjnego przepychu, bez wykładów z Kubernetesa.
+        </p>
+        <p>
+          Format inspirowany TEDx: 15–20 min, jedna idea, która zostaje w głowie następnego dnia. Prelegenci wśród uczestników podczas przerw kawowych. Prawdziwa scena teatralna.
+        </p>
+        <p>
+          <strong>Bilety od 50 zł</strong> – nawet 10× taniej niż inne konferencje IT. Bo wiedza powinna być dostępna dla wszystkich.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-values reveal">
+      <div class="value-card">
+        <div class="value-icon">💡</div>
+        <div class="value-title">Idee, nie slajdy</div>
+        <div class="value-desc">Format TEDx – 15–20 min. Jedna idea warta zapamiętania. Bez Q&A, za to z esencją.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <div class="value-title">Networking po ludzku</div>
+        <div class="value-desc">Dwie przerwy kawowe. Prelegenci wśród uczestników. Rozmowy bez krawata.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📍</div>
+        <div class="value-title">Lokalne, ale ambitne</div>
+        <div class="value-desc">Pabianice na mapie IT. Sala teatralna z prawdziwą sceną i balkonem na 200 osób.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">❤️</div>
+        <div class="value-title">Non-profit</div>
+        <div class="value-desc">Nikt tu nie zarabia. Organizatorzy i prelegenci działają z pasji do ludzi i idei.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section class="agenda" id="agenda">
+  <div class="reveal">
+    <p class="section-eyebrow">Program</p>
+    <h2 class="section-title">12 września 2026<br>10:00 – 14:30</h2>
+    <p class="section-desc">Półdniowa formuła – intensywna i konkretna. Przerwy kawowe to część programu, nie pauzy między slajdami.</p>
+  </div>
+
+  <div class="agenda-layout">
+    <div class="agenda-sidebar reveal">
+      <div class="agenda-summary">
+        <p class="agenda-summary-title">W skrócie</p>
+        <div class="summary-row"><span>🎤</span><span>2 keynote'y otwierający i zamykający</span></div>
+        <div class="summary-row"><span>🗣️</span><span>6 prelekcji + 1 panel dyskusyjny</span></div>
+        <div class="summary-row"><span>☕</span><span>2 przerwy kawowe / networking</span></div>
+        <div class="summary-row"><span>⏱️</span><span>15–20 min / prelekcja</span></div>
+        <div class="summary-row"><span>🎭</span><span>Scena teatralna, widownia ~200 os.</span></div>
+        <div class="summary-row"><span>🗺️</span><span>ul. Kościuszki 14, Pabianice</span></div>
+      </div>
+    </div>
+
+    <div class="agenda-timeline reveal">
+
+      <div class="agenda-item">
+        <div class="agenda-time">09:00</div>
+        <div class="agenda-card break">
+          <div class="agenda-tag">Rejestracja</div>
+          <div class="agenda-card-title">🎟️ Rejestracja uczestników</div>
+          <div class="agenda-speaker">Wolontariusze · 09:00–10:00</div>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">10:00</div>
+        <div class="agenda-card keynote">
+          <div class="agenda-tag">Otwarcie</div>
+          <div class="agenda-card-title">Powitanie i otwarcie konferencji</div>
+          <div class="agenda-speaker">MC + goście + Grzegorz Sztandera · 10 min</div>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">10:10</div>
+        <div class="agenda-card keynote" style="cursor:pointer;" onclick="this.classList.toggle('expanded')">
+          <div class="agenda-tag">Keynote otwierający</div>
+          <div class="agenda-card-title">Kurs na wiatr. Czego żeglarstwo nauczyło mnie o budowaniu zawodowej drogi i czy było warto.</div>
+          <div class="agenda-speaker">Tomasz Manugiewicz · 20 min</div>
+          <div class="agenda-desc">Zaproszenie w rejs po zawodowych wodach. O programistach i sprzyjających wiatrach, ale też o sztormach w IT – w tym covidowych. O momentach, gdy kariera trafia na mieliznę lub zatrzymuje się w flaucie, mimo że plan wydawał się dobrze rozpisany. Historia o odzyskiwaniu sprawczości, przejęciu steru i szukaniu własnego kursu. I o najważniejszym pytaniu – czy taki rejs prowadzi do zawodowego spełnienia?</div>
+          <button class="agenda-expand">Czytaj więcej ↓</button>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">10:30</div>
+        <div class="agenda-card open-slot">
+          <div class="agenda-tag">Prelekcja</div>
+          <div class="agenda-card-title">Slot do potwierdzenia</div>
+          <div class="agenda-speaker">Prelegent TBA · 20 min</div>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">10:50</div>
+        <div class="agenda-card open-slot">
+          <div class="agenda-tag">Prelekcja · Partner</div>
+          <div class="agenda-card-title">Slot sponsorski</div>
+          <div class="agenda-speaker">Prelegent TBA · 20 min</div>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">11:10</div>
+        <div class="agenda-card break">
+          <div class="agenda-tag">Przerwa</div>
+          <div class="agenda-card-title">☕ Kawa + Networking</div>
+          <div class="agenda-speaker">30 min</div>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">11:40</div>
+        <div class="agenda-card" onclick="this.classList.toggle('expanded')" style="cursor:pointer;">
+          <div class="agenda-tag">Prelekcja</div>
+          <div class="agenda-card-title">Krótka historia o tym jak zhakował mnie bank</div>
+          <div class="agenda-speaker">Mateusz Lach · 20 min</div>
+          <button class="agenda-expand">Czytaj więcej ↓</button>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">12:00</div>
+        <div class="agenda-card panel-card" onclick="this.classList.toggle('expanded')" style="cursor:pointer;">
+          <div class="agenda-tag">Panel dyskusyjny</div>
+          <div class="agenda-card-title">Jak ze świetnego specjalisty nie stać się beznadziejnym liderem</div>
+          <div class="agenda-speaker">Krzysztof Rakowski i Paweł Rekowski (Nerd Management) · 30 min</div>
+          <div class="agenda-desc">Awans na stanowisko menedżerskie często przychodzi dlatego, że jesteś najlepszym specjalistą w swoim zespole. A to właśnie te umiejętności, które do tej pory gwarantowały sukces, mogą stać się Twoją największą pułapką. Trzy przekleństwa nowych liderów, które mogą rozwalić zespół… i Twoją nową karierę – i co możesz zrobić inaczej.</div>
+          <button class="agenda-expand">Czytaj więcej ↓</button>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">12:30</div>
+        <div class="agenda-card" onclick="this.classList.toggle('expanded')" style="cursor:pointer;">
+          <div class="agenda-tag">Prelekcja</div>
+          <div class="agenda-card-title">Leadership w erze AI i automatyzacji</div>
+          <div class="agenda-speaker">Małgorzata Momotko · 20 min</div>
+          <div class="agenda-desc">Liderzy w erze AI stoją przed paradoksem: technologia przejmuje decyzje operacyjne, ale odpowiedzialność pozostaje po stronie człowieka. 7 kluczowych zasad nowoczesnego leadershipu – od decyzji opartych na danych, przez kulturę odpowiedzialności, po prostotę komunikacji. AI nie zastąpi lidera – ale bez dobrego lidera AI nie ma wartości.</div>
+          <button class="agenda-expand">Czytaj więcej ↓</button>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">12:50</div>
+        <div class="agenda-card break">
+          <div class="agenda-tag">Przerwa</div>
+          <div class="agenda-card-title">☕ Kawa + Networking</div>
+          <div class="agenda-speaker">30 min</div>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">13:20</div>
+        <div class="agenda-card open-slot">
+          <div class="agenda-tag">Prelekcja · Partner</div>
+          <div class="agenda-card-title">Slot sponsorski</div>
+          <div class="agenda-speaker">Prelegent TBA · 20 min</div>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">13:40</div>
+        <div class="agenda-card" onclick="this.classList.toggle('expanded')" style="cursor:pointer;">
+          <div class="agenda-tag">Prelekcja</div>
+          <div class="agenda-card-title">To nie Jira zawiodła. To komunikacja.</div>
+          <div class="agenda-speaker">Katarzyna Łazarska · 20 min</div>
+          <div class="agenda-desc">W IT często wierzymy, że problemy wynikają z technologii, złego scope'u albo braku czasu. Tymczasem prawdziwym źródłem chaosu i frustracji jest komunikacja. Konkretne, sprawdzone sposoby komunikowania się w zespołach IT – zmniejszające napięcia, przyspieszające decyzje i poprawiające współpracę. Bez teorii i korporacyjnego żargonu.</div>
+          <button class="agenda-expand">Czytaj więcej ↓</button>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">14:00</div>
+        <div class="agenda-card keynote" onclick="this.classList.toggle('expanded')" style="cursor:pointer;">
+          <div class="agenda-tag">Keynote zamykający</div>
+          <div class="agenda-card-title">Miejsce, w którym każdy dzień to sprint: praktyczny Agile poza IT</div>
+          <div class="agenda-speaker">Maciej Szałek · 20 min</div>
+          <div class="agenda-desc">Czy da się prowadzić hotel tak, jak zwinny zespół w IT? Hotelowe daily, backlog rezerwacji i reklamacji, planowanie „sprintów" przy wysokim obłożeniu. Scrum i Agile jako bardzo praktyczne podejście do zarządzania drużyną, priorytetami i chaosem operacyjnym – w biznesie który działa 24/7 i nie tworzy linijek kodu.</div>
+          <button class="agenda-expand">Czytaj więcej ↓</button>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">14:20</div>
+        <div class="agenda-card closing">
+          <div class="agenda-tag">Zakończenie</div>
+          <div class="agenda-card-title">Zamknięcie konferencji + do zobaczenia!</div>
+          <div class="agenda-speaker">MC + Grzegorz Sztandera · 10 min</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKERS -->
+<section class="speakers" id="prelegenci">
+  <div class="reveal">
+    <p class="section-eyebrow">Prelegenci</p>
+    <h2 class="section-title">Ludzie z doświadczeniem<br>i historiami wartymi słuchania.</h2>
+    <p class="section-desc">Praktycy, nie akademicy. Każdy z nich ma coś konkretnego do powiedzenia o karierze, przywództwie i pracy w IT.</p>
+  </div>
+
+  <div class="speakers-grid" style="margin-top:3rem;">
+
+    <div class="speaker-card reveal">
+      <div class="speaker-type keynote-badge">Keynote</div>
+      <div class="speaker-avatar">⚓</div>
+      <div class="speaker-name">Tomasz Manugiewicz</div>
+      <div class="speaker-role">Programista · Żeglarz · Opowiadacz historii</div>
+      <div class="speaker-topic">Kurs na wiatr. Czego żeglarstwo nauczyło mnie o zawodowej drodze.</div>
+    </div>
+
+    <div class="speaker-card reveal">
+      <div class="speaker-type">Prelekcja</div>
+      <div class="speaker-avatar">🔐</div>
+      <div class="speaker-name">Mateusz Lach</div>
+      <div class="speaker-role">Specjalista ds. bezpieczeństwa</div>
+      <div class="speaker-topic">Krótka historia o tym jak zhakował mnie bank</div>
+    </div>
+
+    <div class="speaker-card reveal">
+      <div class="speaker-type panel-badge">Panel</div>
+      <div class="speaker-avatar">🎙️</div>
+      <div class="speaker-name">Krzysztof Rakowski<br>& Paweł Rekowski</div>
+      <div class="speaker-role">Nerd Management · Podcast i szkolenia dla liderów IT</div>
+      <div class="speaker-topic">Jak ze świetnego specjalisty nie stać się beznadziejnym liderem</div>
+    </div>
+
+    <div class="speaker-card reveal">
+      <div class="speaker-type">Prelekcja</div>
+      <div class="speaker-avatar">🤖</div>
+      <div class="speaker-name">Małgorzata Momotko</div>
+      <div class="speaker-role">Lider globalnych zespołów IT · Manager</div>
+      <div class="speaker-topic">Leadership w erze AI i automatyzacji</div>
+    </div>
+
+    <div class="speaker-card reveal">
+      <div class="speaker-type">Prelekcja</div>
+      <div class="speaker-avatar">💬</div>
+      <div class="speaker-name">Katarzyna Łazarska</div>
+      <div class="speaker-role">Specjalistka komunikacji w IT</div>
+      <div class="speaker-topic">To nie Jira zawiodła. To komunikacja.</div>
+    </div>
+
+    <div class="speaker-card reveal">
+      <div class="speaker-type keynote-badge">Keynote</div>
+      <div class="speaker-avatar">🏨</div>
+      <div class="speaker-name">Maciej Szałek</div>
+      <div class="speaker-role">Hoteliarz · Agile poza IT</div>
+      <div class="speaker-topic">Miejsce, w którym każdy dzień to sprint: praktyczny Agile poza IT</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TICKETS -->
+<section class="tickets" id="bilety">
+  <div class="reveal" style="position:relative;z-index:1;">
+    <p class="section-eyebrow">Bilety</p>
+    <h2 class="section-title">Wybierz swój bilet</h2>
+    <p class="section-desc" style="color:rgba(255,255,255,0.45);">Konferencja non-profit. Każda złotówka wraca do uczestników – kawa, sala, technika.</p>
+  </div>
+
+  <div class="tickets-grid">
+    <div class="ticket-card reveal">
+      <div class="ticket-name">Early Bird</div>
+      <div class="ticket-price">50<span>zł</span></div>
+      <div class="ticket-desc">Dla zdecydowanych i szybkich. Limitowana pula.</div>
+      <ul class="ticket-perks">
+        <li>Wstęp na wszystkie prelekcje</li>
+        <li>Dwie przerwy kawowe</li>
+        <li>Networking z prelegentami</li>
+        <li>Dostęp do materiałów</li>
+      </ul>
+      <a href="mailto:pabianiceconference@gmail.com?subject=Bilet Early Bird – Pabia NICE Conference" class="ticket-btn">Zarezerwuj miejsce</a>
+    </div>
+
+    <div class="ticket-card featured reveal">
+      <div class="ticket-name">Standardowy</div>
+      <div class="ticket-price">100<span>zł</span></div>
+      <div class="ticket-desc">Pełen dostęp do konferencji w normalnej cenie.</div>
+      <ul class="ticket-perks">
+        <li>Wstęp na wszystkie prelekcje</li>
+        <li>Dwie przerwy kawowe</li>
+        <li>Networking z prelegentami</li>
+        <li>Dostęp do materiałów</li>
+        <li>Pamiątkowy certyfikat uczestnictwa</li>
+      </ul>
+      <a href="mailto:pabianiceconference@gmail.com?subject=Bilet Standardowy – Pabia NICE Conference" class="ticket-btn">Kup bilet →</a>
+    </div>
+
+    <div class="ticket-card reveal">
+      <div class="ticket-name">Firmowy / Budżet szkoleniowy</div>
+      <div class="ticket-price">150<span>zł</span></div>
+      <div class="ticket-desc">Dla firm – faktura VAT + priorytetowe miejsca.</div>
+      <ul class="ticket-perks">
+        <li>Wszystko ze standardowego</li>
+        <li>Faktura VAT</li>
+        <li>Priorytetowy wybór miejsca</li>
+        <li>Wzmianka w programie (jako supporter)</li>
+      </ul>
+      <a href="mailto:pabianiceconference@gmail.com?subject=Bilet Firmowy – Pabia NICE Conference" class="ticket-btn">Napisz do nas</a>
+    </div>
+  </div>
+
+  <p class="ticket-note">Bilety dostępne przez rejestrację mailową. Szczegóły dotyczące płatności zostaną wysłane po potwierdzeniu. Konferencja non-profit – brak systemu biletowego online.</p>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners" id="partnerzy">
+  <div class="partners-intro">
+    <div class="reveal">
+      <p class="section-eyebrow">Partnerzy</p>
+      <h2 class="section-title">Zbudujmy to razem.</h2>
+      <p class="section-desc">Pabia NICE Conference to event non-profit dla społeczności IT. Partnerstwo to nie reklama – to wkład w coś wartościowego dla Twojego regionu i branży.</p>
+
+      <div class="partner-tiers" style="margin-top:2rem;">
+        <div class="partner-tier tier-gold">
+          <div class="partner-tier-badge">👑</div>
+          <div>
+            <div class="partner-tier-name">Partner Złoty</div>
+            <div class="partner-tier-desc">Logo na scenie, baner, slot prelekcji (20 min), materiały</div>
+          </div>
+        </div>
+        <div class="partner-tier tier-silver">
+          <div class="partner-tier-badge">🥈</div>
+          <div>
+            <div class="partner-tier-name">Partner Srebrny</div>
+            <div class="partner-tier-desc">Logo na materiałach, stoisko/roll-up, wzmianki</div>
+          </div>
+        </div>
+        <div class="partner-tier tier-patron">
+          <div class="partner-tier-badge">🌱</div>
+          <div>
+            <div class="partner-tier-name">Patron / Wspierający</div>
+            <div class="partner-tier-desc">Logo w programie, podziękowanie ze sceny</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="partners-cta-box reveal">
+      <h3>Zostań partnerem</h3>
+      <p>Napisz do nas – dobierzemy formę współpracy do Twojego budżetu i celów. Każda forma wsparcia jest dla nas cenna. Oferta sponsorska dostępna na życzenie.</p>
+      <a href="mailto:pabianiceconference@gmail.com?subject=Partnerstwo – Pabia NICE Conference" class="btn-grad" style="display:inline-flex;">Napisz do nas →</a>
+    </div>
+  </div>
+
+  <div class="partners-placeholder reveal">
+    <p style="font-size:1.5rem;margin-bottom:0.5rem;">🤝</p>
+    <p><strong>Tu pojawią się logotypy partnerów.</strong> Bądź pierwszym!</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-grid">
+    <div class="reveal">
+      <p class="section-eyebrow">FAQ</p>
+      <h2 class="section-title">Masz pytania?<br>My mamy odpowiedzi.</h2>
+      <p class="section-desc">Jeśli tu nie ma Twojego pytania – napisz do nas na pabianiceconference@gmail.com</p>
+    </div>
+
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Dla kogo jest ta konferencja?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Dla każdego, kto pracuje lub interesuje się IT i chce rozwijać się nie tylko technicznie. Tematyka obejmuje karierę, przywództwo, komunikację i kulturę pracy – dlatego mile widziani są też ludzie spoza IT. Jeśli zastanawiasz się, czy Twoja kariera zmierza w dobrym kierunku – to właśnie dla Ciebie.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Ile kosztuje bilet i jak mogę go kupić?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Bilety są dostępne od 50 zł (Early Bird) do 100 zł (standard) i 150 zł (firmowy z fakturą). Zakup odbywa się mailowo – napisz na pabianiceconference@gmail.com, a my przeprowadzimy Cię przez cały proces rejestracji i płatności.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Gdzie dokładnie odbywa się konferencja?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Miejski Ośrodek Kultury w Pabianicach, ul. Tadeusza Kościuszki 14. To prawdziwa scena teatralna z podwyższeniem, kulisami, garderobami i balkonem – nie typowa sala konferencyjna.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Jak dojechać? Czy jest parking?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Pabianice leżą ok. 15 km od centrum Łodzi. Możesz dojechać pociągiem (Łódź Kaliska → Pabianice, ok. 20 min) lub samochodem – w centrum Pabianice dostępne są parkingi przy ul. Kościuszki i pobliskich ulicach. Szczegóły dojazdu zostaną opublikowane bliżej daty.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Czy mogę zgłosić swój temat jako prelegent?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Tak! Szukamy prelegentów z historiami i ideami wartymi podzielenia się. Nie głębokiej techniki, ale doświadczeń z kariery, zarządzania, komunikacji i pracy zespołowej. Napisz na pabianiceconference@gmail.com z tytułem, abstraktem i krótką notką o sobie. Prelegenci mogą liczyć na nocleg.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Czy konferencja jest nagrywana?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Planujemy nagrywać prelekcje i udostępnić je po konferencji. Szczegóły zostaną potwierdzone bliżej daty. Uczestnicy na miejscu dostaną dostęp do materiałów jako pierwsi.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Czy mogę zostać wolontariuszem lub partnerem?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Oczywiście! Szukamy wolontariuszy przy rejestracji, obsłudze sali i logistyce. Jeśli chcesz wesprzeć konferencję jako partner lub sponsor – mamy kilka poziomów współpracy dopasowanych do różnych budżetów. Napisz na pabianiceconference@gmail.com.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section class="venue" id="venue">
+  <div class="reveal">
+    <p class="section-eyebrow">Miejsce</p>
+    <h2 class="section-title">Miejski Ośrodek Kultury<br>w Pabianicach</h2>
+    <p class="section-desc">Prawdziwa scena teatralna z podwyższeniem, kulisami, garderobami i balkonem. Nie sala konferencyjna – teatr.</p>
+  </div>
+
+  <div class="venue-grid">
+    <div class="venue-map reveal">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2473.7!2d19.3530!3d51.6631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471a34e5e5e5e5e5%3A0x1234!2sMiejski+O%C5%9Brodek+Kultury%2C+ul.+Tadeusza+Ko%C5%9Bciuszki+14%2C+95-200+Pabianice!5e0!3m2!1spl!2spl!4v1620000000000"
+        allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+
+    <div class="venue-details reveal">
+      <div class="venue-detail">
+        <div class="venue-detail-icon">📍</div>
+        <div>
+          <div class="venue-detail-label">Adres</div>
+          <div class="venue-detail-value">ul. Tadeusza Kościuszki 14, Pabianice</div>
+        </div>
+      </div>
+      <div class="venue-detail">
+        <div class="venue-detail-icon">📅</div>
+        <div>
+          <div class="venue-detail-label">Data i godziny</div>
+          <div class="venue-detail-value">Sobota, 12 września 2026 · 09:00–14:30</div>
+        </div>
+      </div>
+      <div class="venue-detail">
+        <div class="venue-detail-icon">🎭</div>
+        <div>
+          <div class="venue-detail-label">Pojemność</div>
+          <div class="venue-detail-value">~200 osób (z balkonem)</div>
+        </div>
+      </div>
+      <div class="venue-detail">
+        <div class="venue-detail-icon">🎙️</div>
+        <div>
+          <div class="venue-detail-label">Technika</div>
+          <div class="venue-detail-value">Rzutnik, mikrofon ręczny lub nauszny, monitor podglądu slajdów</div>
+        </div>
+      </div>
+      <div class="venue-detail">
+        <div class="venue-detail-icon">🚆</div>
+        <div>
+          <div class="venue-detail-label">Dojazd</div>
+          <div class="venue-detail-value">Pociąg z Łódź Kaliska ~20 min · Samochód z obwodnicy ~15 min</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <p class="section-eyebrow" style="-webkit-text-fill-color:rgba(255,255,255,0.4);color:rgba(255,255,255,0.4);">Zaczynamy</p>
+    <div class="cta-title">Znajdź odpowiedź czy Twoja kariera<br>zmierza w <span class="nice-word">dobrym kierunku.</span></div>
+    <p class="cta-desc">12 września 2026. Pabianice. Konferencja dla miłych ludzi z IT i nie tylko.</p>
+    <div class="cta-actions">
+      <a href="#bilety" class="btn-grad">Kup bilet →</a>
+      <a href="mailto:pabianiceconference@gmail.com" class="btn-ghost">Napisz do nas</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Pabia NICE Conference · <a href="mailto:pabianiceconference@gmail.com">pabianiceconference@gmail.com</a></p>
+  <ul class="footer-links">
+    <li><a href="#o-konferencji">O konferencji</a></li>
+    <li><a href="#agenda">Agenda</a></li>
+    <li><a href="#prelegenci">Prelegenci</a></li>
+    <li><a href="#partnerzy">Partnerzy</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#bilety">Bilety</a></li>
+  </ul>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // FAQ toggle
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // Agenda expand buttons
+  document.querySelectorAll('.agenda-expand').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = btn.closest('.agenda-card');
+      card.classList.toggle('expanded');
+      btn.textContent = card.classList.contains('expanded') ? 'Zwiń ↑' : 'Czytaj więcej ↓';
+    });
+  });
+</script>
+
+</body>
+</html>
