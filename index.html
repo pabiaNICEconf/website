@@ -81,6 +81,11 @@
     gap: 0.25rem;
     list-style: none;
     align-items: center;
+    position: fixed;
+    top: 0;
+    right: var(--gutter);
+    z-index: 9001;
+    padding: 0.75rem 0;
   }
 
   .nav-links a {
@@ -1307,7 +1312,8 @@
       flex-direction: column;
       gap: 0;
       position: fixed;
-      inset: 0;
+      top: 0; right: 0; bottom: 0; left: 0;
+      padding: 0;
       background: #0d0e1c;
       justify-content: center;
       align-items: center;
