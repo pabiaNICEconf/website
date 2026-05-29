@@ -23,3 +23,5 @@ jobs:
             **/.git*
             **/.git*/**
             **/README.md
+            **/README.md
+            **/CNAME
