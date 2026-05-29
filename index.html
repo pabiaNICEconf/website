@@ -45,7 +45,7 @@
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
-    z-index: 260;
+    z-index: 9001;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1308,11 +1308,10 @@
       gap: 0;
       position: fixed;
       inset: 0;
-      background: rgba(13,14,28,0.97);
-      backdrop-filter: blur(24px);
+      background: #0d0e1c;
       justify-content: center;
       align-items: center;
-      z-index: 250;
+      z-index: 9000;
     }
     .nav-links.open { display: flex; }
     .nav-links li { width: 100%; text-align: center; }
@@ -1360,15 +1359,15 @@
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#o-konferencji">O konferencji</a></li>
-    <li><a href="#agenda">Agenda</a></li>
-    <li><a href="#prelegenci">Prelegenci</a></li>
-    <li><a href="#partnerzy">Partnerzy</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="https://kupbilecik.pl/#LINK" class="nav-cta" target="_blank">Kup bilet →</a></li>
-  </ul>
 </nav>
+<ul class="nav-links" id="nav-links">
+  <li><a href="#o-konferencji">O konferencji</a></li>
+  <li><a href="#agenda">Agenda</a></li>
+  <li><a href="#prelegenci">Prelegenci</a></li>
+  <li><a href="#partnerzy">Partnerzy</a></li>
+  <li><a href="#faq">FAQ</a></li>
+  <li><a href="https://kupbilecik.pl/#LINK" class="nav-cta" target="_blank">Kup bilet →</a></li>
+</ul>
 
 <!-- HERO -->
 <section class="hero" id="hero">
