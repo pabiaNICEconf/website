@@ -3,7 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pabia NICE Conference – 12 września 2026, Pabianice</title>
+<title>PabiaNICE Conference – 12 września 2026, Pabianice</title>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
@@ -1290,6 +1294,17 @@
   footer a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.78rem; transition: color 0.2s; }
   footer a:hover { color: rgba(255,255,255,0.8); }
   .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+  .footer-social { display: flex; gap: 0.75rem; list-style: none; }
+  .footer-social a {
+    display: flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; border-radius: 8px;
+    background: rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.5);
+    transition: background 0.2s, color 0.2s;
+    font-size: 0;
+  }
+  .footer-social a:hover { background: rgba(255,255,255,0.15); color: white; }
+  .footer-social svg { width: 18px; height: 18px; fill: currentColor; }
 
   /* ── SCROLL REVEAL ── */
   .reveal {
@@ -1363,7 +1378,7 @@
 <!-- NAV -->
 <nav>
   <a href="https://pabianiceconference.pl" class="nav-logo">
-    <img src="images/logoNapis.png" alt="Pabia NICE Conference" style="height:42px;width:auto;display:block;">
+    <img src="images/logoNapis.png" alt="PabiaNICE Conference" style="height:42px;width:auto;display:block;">
   </a>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -1390,14 +1405,14 @@
     </div>
 
     <div class="hero-logo" style="margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.6s 0.2s forwards;">
-      <img src="images/fullLogoBiale.png" alt="Pabia NICE Conference" style="max-height:240px;width:auto;max-width:100%;height:auto;display:block;">
+      <img src="images/fullLogoBiale.png" alt="PabiaNICE Conference" style="max-height:240px;width:auto;max-width:100%;height:auto;display:block;">
     </div>
 
     <p class="hero-tagline">Konferencja dla miłych ludzi. Z IT i nie tylko.</p>
 
     <p class="hero-sub">
-      Znajdź odpowiedź czy <strong>Twoja kariera zmierza w dobrym kierunku?</strong><br>
-      Format inspirowany TEDx – bez deep-dive'ów w technologię. Idee, ludzie i doświadczenia, które zmieniają sposób pracy i myślenia. Konferencja Pabia NICE jest dla wszystkich, nie tylko pracujących w IT! Wydarzenie kierujemy do miłych ludzi, którzy stawiają na rozwój swojej kariery, przywództwa, komunikacji i kultury pracy – tematyka ta jest idealna również dla pełnoletnich uczniów i studentów.
+      Przekonaj się, czy <strong>Twoja kariera zmierza w dobrym kierunku.</strong><br>
+      Format inspirowany TEDx - bez deep-dive'ów w technologię. Idee, ludzie i doświadczenia, które zmieniają sposób pracy i myślenia. Konferencja PabiaNICE jest dla wszystkich, nie tylko pracujących w IT! Wydarzenie kierujemy do miłych ludzi, którzy stawiają na rozwój swojej kariery, przywództwa, komunikacji i kultury pracy – tematyka ta jest idealna również dla pełnoletnich uczniów i studentów.
     </p>
 
     <div class="hero-actions">
@@ -1434,10 +1449,10 @@
       <h2 class="section-title">Kariera może być<br>przyjemniejsza.</h2>
       <div class="about-body">
         <p class="about-lead">
-          <span class="nice-inline">Pabia NICE Conference</span> – konferencja dla miłych ludzi. Z IT i nie tylko. Przyjdź i znajdź odpowiedź czy Twoja kariera zmierza w dobrym kierunku?
+          <span class="nice-inline">PabiaNICE Conference</span> – konferencja dla miłych ludzi. Z IT i nie tylko. Przyjdź i przekonaj się, czy Twoja kariera zmierza w dobrym kierunku.
         </p>
         <p>
-          Gra słów w nazwie nie jest przypadkiem. <strong>PabiaNICE</strong> to Pabianice + angielskie „nice". Wierzymy, że konferencje mogą być merytoryczne i ludzkie jednocześnie – bez korporacyjnego przepychu, bez wykładów z linijkami kodu Terraforma.
+          Gra słów w nazwie nie jest przypadkiem. <strong>PabiaNICE</strong> to Pabianice + angielskie „nice". Wierzymy, że konferencje mogą być merytoryczne i ludzkie jednocześnie – bez korporacyjnego przepychu, bez wykładów z linijkami kodu Pythona.
         </p>
         <p>
           Format inspirowany TEDx: każda prelekcja trwa 15–20 min, zawarta jest w niej jedna idea, która zostaje z nami na długo.
@@ -1457,7 +1472,7 @@
       <div class="value-card">
         <div class="value-icon">🤝</div>
         <div class="value-title">Networking po ludzku</div>
-        <div class="value-desc">Dwie przerwy kawowe. Rozmowy bez krawata.</div>
+        <div class="value-desc">Trzy przerwy kawowe. Rozmowy bez krawata.</div>
       </div>
       <div class="value-card">
         <div class="value-icon">📍</div>
@@ -1476,9 +1491,9 @@
 <!-- AGENDA -->
 <section class="agenda" id="agenda">
   <div class="reveal">
-    <p class="section-eyebrow">Program</p>
-    <h2 class="section-title">12 września 2026<br>10:00 – 15:00</h2>
-    <p class="section-desc">Półdniowa formuła – intensywna i konkretna. Wszystkie prelekcje w stylu TEDx + panel dyskusyjny - idealne połączenie. Przerwy kawowe to część programu, nie pauzy między slajdami.</p>
+    <p class="section-eyebrow">Agenda</p>
+    <h2 class="section-title">12 września 2026<br>10:00–15:00</h2>
+    <p class="section-desc">Półdniowa formuła, która jest zarówno intensywna, jak i konkretna. Wszystkie prelekcje organizujemy w stylu TEDx, w połączeniu z panelem dyskusyjnym, a przerwy kawowe będą stanowić część programu, zamiast służyć tylko jako pauzy między slajdami. To idealny moment na networking!</p>
   </div>
 
   <div class="agenda-layout">
@@ -1560,7 +1575,7 @@
         <div class="agenda-time">11:40</div>
         <div class="agenda-card" onclick="this.classList.toggle('expanded')" style="cursor:pointer;">
           <div class="agenda-tag">Prelekcja</div>
-          <div class="agenda-card-title">Krótka historia o tym jak zhakował mnie bank</div>
+          <div class="agenda-card-title">Krótka historia o tym, jak zhakował mnie bank</div>
           <div class="agenda-speaker">Mateusz Lach (Commerzbank) · 20 min</div>
  <div class="agenda-desc">Szczegóły już wkrótce!</div>
           <button class="agenda-expand">Czytaj więcej ↓</button>
@@ -1648,8 +1663,8 @@
 <section class="speakers" id="prelegenci">
   <div class="reveal">
     <p class="section-eyebrow">Prelegenci</p>
-    <h2 class="section-title">Ludzie z doświadczeniem<br>i historiami wartymi słuchania.</h2>
-    <p class="section-desc">Praktycy, nie teoretycy. Każdy z nich ma coś konkretnego do powiedzenia o karierze, przywództwie i pracy w IT, czym dzielą się także na polskich uczelniach i największych scenach konferencyjnych w Europie. Tym razem zrobią to w Pabianicach.</p>
+    <h2 class="section-title">Ludzie z doświadczeniem<br>i historiami, których warto wysłuchać.</h2>
+    <p class="section-desc">Nasi prelegenci to praktycy, nie teoretycy. Każdy z nich ma swoje doświadczenia w obszarze budowania ścieżki kariery, przywództwa i pracy w IT, którymi dzielą się na polskich uczelniach i największych scenach konferencyjnych w Europie. Tym razem zrobią to w Pabianicach.</p>
   </div>
 
   <div class="speakers-grid" style="margin-top:3rem;">
@@ -1693,7 +1708,7 @@
       <div class="speaker-photo">
         <img src="images/krzysztofPawel.jpeg" alt="Paweł Rekowski" style="object-position: 75% center; transform: scale(1.8); transform-origin: 100% 40%;">
       </div>
-      <a href="https://www.linkedin.com/in/pawel-rekowski/" target="_blank" class="speaker-linkedin-name">Paweł Rękowski <span class="li-icon">in</span></a>
+      <a href="https://www.linkedin.com/in/pawel-rekowski/" target="_blank" class="speaker-linkedin-name">Paweł Rekowski <span class="li-icon">in</span></a>
       <div class="speaker-company">Nerd Management</div>
       <div class="speaker-role">Podcast i szkolenia dla liderów IT</div>
       <span class="speaker-bio">Człowiek wielu pasji i talentów. Przedsiębiorca, Podcaster, Lider, Mówca, Certyfikowany Trener Rozwoju, Facylitator oraz finalista konkursu IT Manager of Tomorrow Awards 2021. Prywatnie mąż i ojciec dwóch synów z ASD, poszukujący skutecznych sposobów jak Czuć się, Wyglądać i Żyć #Lepiej. Ponad pół życia spędził w branży IT jako programista i manager, pracując dla takich marek jak Allegro, BlaBlaCar czy eMAG. Aktualnie buduje lokalne społeczności wdrażające w życie 13 nawyków w 26 miastach w Europie jako CEO Lokalnych Klubów 555. Razem z Krzysztofem Rakowskim prowadzi wideo podcast Nerd.Management, skierowany do świeżo upieczonych i przyszłych liderów w IT i nie tylko. Miłośnik ostrych brzmień, skutecznej komunikacji oraz szukania balansu w życiu.</span>
@@ -1726,11 +1741,14 @@
 
     <div class="speaker-card reveal">
       <div class="speaker-type keynote-badge">Keynote</div>
-      <div class="speaker-photo-placeholder">📷<br>zdjęcie</div>
+      <div class="speaker-photo"><img src="images/maciejsz.jpg" alt="Maciej Szałek" style="transform: scale(1.0); transform-origin: 70% 0%;"></div>
       <a href="https://www.linkedin.com/in/szalekmaciej/" target="_blank" class="speaker-linkedin-name">Maciej Szałek <span class="li-icon">in</span></a>
       <div class="speaker-company">Kolumna Park</div>
       <div class="speaker-role">Dyrektor Hotelu · Agile poza IT</div>
-      <div class="speaker-bio-placeholder">BIO prelegenta zostanie dodane wkrótce.</div>
+      <span class="speaker-bio">Prezes Zarządu Hotelu Kolumna Park, miłośnik saunowania.
+        Zaczęło się od: ,,..traktujesz ten dom jak hotel'', aby dojść do: ,,Traktujesz ten Hotel jak Dom''.
+        Hotelarz, twórca atmosfery, człowiek z uśmiechem.
+        Mówi o sobie: "Lubię ludzi - potrafię z ludzi w Hotelu - zbudować Drużynę Hotelu".</span>
       <div class="speaker-topic">Miejsce, w którym każdy dzień to sprint: praktyczny Agile poza IT</div>
     </div>
 
@@ -1740,7 +1758,7 @@
         <img src="images/monikak.jpeg" alt="Monika Kaczmarek" style="transform: scale(1.0); transform-origin: 0% 0%;">
       </div>
       <div class="speaker-linkedin-name" style="cursor:default;">Monika Kaczmarek</div>
-      <div class="speaker-company">Serce Pabia NICE Conference</div>
+      <div class="speaker-company">Serce PabiaNICE Conference</div>
       <div class="speaker-role">Prowadząca wydarzenie · Nauczycielka i tłumaczka języków</div>
       <div class="speaker-bio" style="display:block;">Prowadząca wydarzenia biznesowe, kulturalne i społeczne. Na co dzień związana z Łódzką Specjalną Strefą Ekonomiczną, gdzie pracuje przy projektach opartych na organizacji wydarzeń, współpracy z biznesem i budowaniu relacji partnerskich. Ma doświadczenie w pracy z publicznością podczas spotkań o różnorodnym charakterze: od konferencji i paneli dyskusyjnych po inicjatywy społeczne oraz TEDx. Na scenie łączy profesjonalizm z naturalnością i dobrym wyczuciem rytmu wydarzenia, dbając o płynny przebieg programu i właściwą energię spotkania. Prywatnie miłośniczka brytyjskiej kultury, literatury i teatru.</div>
       <div class="speaker-topic" style="border-left-color:var(--orange);">To ona nada rytm naszej konferencji!</div>
@@ -1842,7 +1860,7 @@
     <div class="reveal">
       <p class="section-eyebrow">Partnerzy</p>
       <h2 class="section-title">Zbudujmy to razem.</h2>
-      <p class="section-desc">Pabia NICE Conference to event non-profit dla społeczności. Partnerstwo to nie reklama – to wkład w coś wartościowego dla Twojej firmy i regionu.</p>
+      <p class="section-desc">PabiaNICE Conference to event non-profit dla społeczności. Wsparcie naszej inicjatywy w formie partnerstwa jest wkładem w coś wartościowego dla Twojej firmy i regionu. </p>
 
       <div class="partner-tiers" style="margin-top:2rem;">
         <div class="partner-tier tier-gold">
@@ -1869,21 +1887,21 @@
       </div>
 
       <div style="margin-top:1.5rem;">
-        <a href="attachments/ofertaPartnerska.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.85rem;font-weight:600;color:var(--blue-mid);text-decoration:none;padding:0.6rem 1rem;border:1px solid rgba(26,44,255,0.2);border-radius:100px;transition:background 0.2s,border-color 0.2s;" onmouseover="this.style.background='rgba(26,44,255,0.05)';this.style.borderColor='rgba(26,44,255,0.4)'" onmouseout="this.style.background='';this.style.borderColor='rgba(26,44,255,0.2)'">
+        <a href="attachments/OfertaPartnerska.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.85rem;font-weight:600;color:var(--blue-mid);text-decoration:none;padding:0.6rem 1rem;border:1px solid rgba(26,44,255,0.2);border-radius:100px;transition:background 0.2s,border-color 0.2s;" onmouseover="this.style.background='rgba(26,44,255,0.05)';this.style.borderColor='rgba(26,44,255,0.4)'" onmouseout="this.style.background='';this.style.borderColor='rgba(26,44,255,0.2)'">
           📥 Pobierz ofertę partnerską (PDF)
         </a>
       </div>
     </div>
 
-    <div style="background:rgba(23,86,244,0.05);border:1px solid rgba(23,86,244,0.15);border-radius:16px;padding:1.25rem 1.5rem;margin-top:2rem;" class="reveal">
+    <div style="background:#ffffff;border:1px solid rgba(23,86,244,0.15);border-radius:16px;padding:1.25rem 1.5rem;margin-top:2rem;" class="reveal">
       <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue-mid);margin-bottom:1rem;">Współorganizator i patronaty</p>
       <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;justify-content:flex-start;">
         <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;text-align:center;">
-          <img src="images/prezydent.jpeg" alt="Prezydent Miasta Pabianic – Grzegorz Mackiewicz" style="height:100px;width:auto;display:block;">
+          <img src="images/prezydent.jpeg" alt="Prezydent Miasta Pabianic – Grzegorz Mackiewicz" style="height:130px;width:auto;display:block;">
           <span style="font-size:0.75rem;color:var(--muted);font-weight:600;">Patronat Prezydenta Miasta</span>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;text-align:center;">
-          <img src="images/powiat.jpeg" alt="Patronat Starosty Pabianickiego" style="height:100px;width:auto;display:block;">
+          <img src="images/powiat.jpeg" alt="Patronat Starosty Pabianickiego" style="height:130px;width:auto;display:block;">
           <span style="font-size:0.75rem;color:var(--muted);font-weight:600;">Współorganizator</span>
         </div>
       </div>
@@ -1892,7 +1910,7 @@
     <div class="partners-cta-box reveal">
       <h3>Zostań partnerem</h3>
       <p>Napisz do nas – dobierzemy formę współpracy do Twojego budżetu i celów. Każda forma wsparcia jest dla nas cenna.</p>
-      <a href="mailto:kontakt@pabianiceconference.pl?subject=Partnerstwo – Pabia NICE Conference" class="btn-grad" style="display:inline-flex;">Napisz do nas →</a>
+      <a href="mailto:kontakt@pabianiceconference.pl?subject=Partnerstwo – PabiaNICE Conference" class="btn-grad" style="display:inline-flex;">Napisz do nas →</a>
       <p style="margin-top:1rem;font-size:0.8rem;color:rgba(255,255,255,0.3);">kontakt@pabianiceconference.pl</p>
     </div>
   </div>
@@ -1920,7 +1938,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          Konferencja Pabia NICE jest dla wszystkich, nie tylko pracujących w IT! Wydarzenie kierujemy do ludzi miłych i stawiających na rozwój w obszarach kariery, przywództwa, komunikacji i kultury pracy – tematyka idealna również dla pełnoletnich uczniów i studentów. Jeśli zastanawiasz się, czy Twoja kariera zmierza w dobrym kierunku, to jesteś w odpowiednim miejscu! Pamiętaj, że wydarzenie jest przeznaczone dla osób pełnoletnich.
+          Konferencja PabiaNICE jest dla wszystkich, nie tylko pracujących w IT! Wydarzenie kierujemy do ludzi miłych i stawiających na rozwój w obszarach kariery, przywództwa, komunikacji i kultury pracy - tematyka idealna chociażby dla pełnoletnich uczniów i studentów. Jeśli zastanawiasz się, czy Twoja kariera zmierza w dobrym kierunku to jesteś w odpowiednim miejscu! Pamiętaj, że wydarzenie jest przeznaczone dla osób pełnoletnich.
         </div>
       </div>
 
@@ -1940,7 +1958,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          W Miejskim Ośrodku Kultury w Pabianicach, przy ul. Tadeusza Kościuszki 14. Nie spodziewaj się typowej sali konferencyjnej – to prawdziwa scena teatralna z podwyższeniem, kulisami, garderobami i balkonem!
+          W Miejskim Ośrodku Kultury w Pabianicach, przy ul. Tadeusza Kościuszki 14. Nie spodziewaj się typowej sali konferencyjnej - to prawdziwa scena teatralna z podwyższeniem, kulisami, garderobami i balkonem!
         </div>
       </div>
 
@@ -1980,7 +1998,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          Tak – to jeden z kluczowych elementów Pabia NICE Conference. Prelegenci będą obecni wśród uczestników podczas przerw kawowych. Nie ma oddzielnych stref VIP – wszyscy jesteśmy na tej samej przestrzeni.
+          Tak – to jeden z kluczowych elementów PabiaNICE Conference. Prelegenci będą obecni wśród uczestników podczas przerw kawowych. Nie ma oddzielnych stref VIP – wszyscy jesteśmy na tej samej przestrzeni.
         </div>
       </div>
 
@@ -2045,18 +2063,18 @@
 <section class="cta-section">
   <div class="cta-inner reveal">
     <p class="section-eyebrow" style="-webkit-text-fill-color:rgba(255,255,255,0.4);color:rgba(255,255,255,0.4);">Zaczynamy</p>
-    <div class="cta-title">Znajdź odpowiedź czy Twoja kariera<br>zmierza w <span class="nice-word">dobrym kierunku.</span></div>
+    <div class="cta-title">Przekonaj się, czy Twoja kariera<br>zmierza w <span class="nice-word">dobrym kierunku.</span></div>
 
     <div class="cta-actions">
       <a href="https://kupbilecik.pl/#LINK" class="btn-grad" target="_blank">Kup bilet →</a>
-      <a href="mailto:kontakt@pabianiceconference.pl" class="btn-ghost">Napisz do nas</a>
+      <a href="mailto:kontakt@pabianiceconference.pl?subject=PabiaNICE Conference" class="btn-ghost">Napisz do nas</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Pabia NICE Conference · <a href="https://pabianiceconference.pl">pabianiceconference.pl</a> · <a href="mailto:kontakt@pabianiceconference.pl">kontakt@pabianiceconference.pl</a></p>
+  <p>© 2026 PabiaNICE Conference · <a href="https://pabianiceconference.pl">pabianiceconference.pl</a> · <a href="mailto:kontakt@pabianiceconference.pl">kontakt@pabianiceconference.pl</a></p>
   <ul class="footer-links">
     <li><a href="#o-konferencji">O konferencji</a></li>
     <li><a href="#agenda">Agenda</a></li>
@@ -2064,6 +2082,26 @@
     <li><a href="#partnerzy">Partnerzy</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#bilety">Bilety</a></li>
+  </ul>
+  <ul class="footer-social">
+    <li>
+      <a href="https://www.instagram.com/pabianice.conference/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/company/pabia-nice-conference/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/pabianice.conference" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+    </li>
   </ul>
 </footer>
 
