@@ -1178,6 +1178,67 @@
     box-shadow: 0 10px 30px rgba(246,172,17,0.4);
   }
 
+  /* ── BILETY GRUPOWE ── */
+  .group-tickets-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px dashed rgba(255,255,255,0.18);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    transition: border-color 0.25s, background 0.25s;
+  }
+
+  .group-tickets-inner:hover {
+    border-color: rgba(246,172,17,0.45);
+    background: rgba(255,255,255,0.07);
+  }
+
+  .group-tickets-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .group-tickets-copy { flex: 1; min-width: 0; }
+
+  .group-tickets-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 0.2rem;
+  }
+
+  .group-tickets-desc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .group-tickets-btn {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.4rem;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  }
+
+  .group-tickets-btn:hover {
+    background: var(--grad-accent);
+    border-color: transparent;
+    color: #0d0e1c;
+    transform: translateY(-2px);
+  }
+
   /* ── PARTNERS ── */
   .partners { background: var(--bg); }
 
@@ -1498,6 +1559,8 @@
     .hero h1 { font-size: 3.2rem; }
     .about-values { grid-template-columns: 1fr; }
     .tickets-grid, .speakers-grid { grid-template-columns: 1fr; }
+    .group-tickets-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .group-tickets-btn { width: 100%; justify-content: center; }
   }
 
   @media (max-width: 480px) {
@@ -2010,6 +2073,17 @@
       <div class="ticket-desc">Jesteś niczym FOUNDer naszej konferencji! Wspierasz konferencję i lokalną społeczność. Dodatkowo: wzmianka w social mediach i podziękowanie podczas konferencji.</div>
       <div style="flex:1;"></div>
       <a href="https://www.kupbilecik.pl/imprezy/208557/Pabianice/PabiaNICE+Conference/" class="ticket-btn" target="_blank">Wesprzyj →</a>
+    </div>
+  </div>
+
+  <div class="reveal group-tickets" style="position:relative;z-index:1;margin-top:1.5rem;">
+    <div class="group-tickets-inner">
+      <div class="group-tickets-icon">👥</div>
+      <div class="group-tickets-copy">
+        <div class="group-tickets-title">Potrzebujesz więcej niż 1 bilet?</div>
+        <p class="group-tickets-desc">Wysyłasz zespół? Dla firm i grup od 3 osób przygotujemy specjalną ofertę — napisz do nas.</p>
+      </div>
+      <a href="mailto:kontakt@pabianiceconference.pl?subject=Bilety grupowe – PabiaNICE Conference&amp;body=Cześć,%0D%0A%0D%0Ainteresują nas bilety grupowe na PabiaNICE Conference.%0D%0A%0D%0AFirma:%0D%0ALiczba osób:%0D%0AKontakt:%0D%0A%0D%0APozdrawiam" class="group-tickets-btn">Napisz po ofertę →</a>
     </div>
   </div>
 
