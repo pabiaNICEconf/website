@@ -1749,7 +1749,7 @@
         <div class="agenda-time">10:10</div>
         <div class="agenda-card keynote" style="cursor:pointer;" onclick="this.classList.toggle('expanded')">
           <div class="agenda-tag">Keynote otwierający</div>
-          <div class="agenda-card-title">Kurs na wiatr. Czego żeglarstwo nauczyło mnie o budowaniu zawodowej drogi i czy było warto.</div>
+          <div class="agenda-card-title">Kurs na wiatr. Czego żeglarstwo nauczyło mnie o budowaniu zawodowej drogi i czy było warto</div>
           <div class="agenda-speaker">Tomasz Manugiewicz (evoke) · 20 min</div>
           <div class="agenda-desc">Zaproszenie w rejs po zawodowych wodach. O programistach i sprzyjających wiatrach, ale też o sztormach w IT – w tym covidowych. O momentach, gdy kariera trafia na mieliznę lub zatrzymuje się w flaucie, mimo że plan wydawał się dobrze rozpisany. Historia o odzyskiwaniu sprawczości, przejęciu steru i szukaniu własnego kursu. I o najważniejszym pytaniu – czy taki rejs prowadzi do zawodowego spełnienia?</div>
           <button class="agenda-expand">Czytaj więcej ↓</button>
@@ -1758,11 +1758,11 @@
 
       <div class="agenda-item">
         <div class="agenda-time">10:30</div>
-        <div class="agenda-card open-slot">
+        <div class="agenda-card" onclick="this.classList.toggle('expanded')" style="cursor:pointer;">
           <div class="agenda-tag">Prelekcja</div>
-          <div class="agenda-card-title">Szczegóły wkrótce!</div>
-          <div class="agenda-speaker">TBA · 20 min</div>
- <div class="agenda-desc">Szczegóły już wkrótce!</div>
+          <div class="agenda-card-title">Syndrom oszusta jako kompetencja. Nie musisz czuć się pewnie, żeby być dobrym</div>
+          <div class="agenda-speaker">Marcin Terlecki (Pathra) · 20 min</div>
+          <div class="agenda-desc">Wielu z nas zna to uczucie: jesteśmy w nowej roli, a mimo to boimy się, że ktoś zaraz zdemaskuje nasz brak kompetencji. Zwykle traktujemy „syndrom oszusta" jako defekt, z którym trzeba walczyć. A gdyby potraktować go jako... przewagę? Podczas wystąpienia opowiem o tym, jak z perspektywy psychologii nasze wątpliwości czynią nas lepszymi słuchaczami i dlaczego zamiast je uciszać, warto zacząć z nimi współpracować.</div>
           <button class="agenda-expand">Czytaj więcej ↓</button>
         </div>
       </div>
@@ -1844,7 +1844,7 @@
         <div class="agenda-time">13:40</div>
         <div class="agenda-card" onclick="this.classList.toggle('expanded')" style="cursor:pointer;">
           <div class="agenda-tag">Prelekcja</div>
-          <div class="agenda-card-title">To nie Jira zawiodła. To komunikacja.</div>
+          <div class="agenda-card-title">To nie Jira zawiodła. To komunikacja</div>
           <div class="agenda-speaker">Katarzyna Łazarska (Ekspertka) · 20 min</div>
           <div class="agenda-desc">W IT często wierzymy, że problemy wynikają z technologii, złego scope'u albo braku czasu. Tymczasem prawdziwym źródłem chaosu i frustracji jest komunikacja. Konkretne, sprawdzone sposoby komunikowania się w zespołach IT – zmniejszające napięcia, przyspieszające decyzje i poprawiające współpracę. Bez teorii i korporacyjnego żargonu.</div>
           <button class="agenda-expand">Czytaj więcej ↓</button>
@@ -1892,7 +1892,19 @@
       <div class="speaker-company">evoke</div>
       <div class="speaker-role">Dyrektor Generalny · Autor · Mówca</div>
       <div class="speaker-bio">Dyrektor Generalny polskiego centrum inżynieryjnego globalnej firmy IT, autor książki <em>Executive Agile</em> i twórca projektu Inżynieria Kariery. Z wykształcenia programista, z pasji mówca. Panelista Forbes i wykładowca informatyki na AGH oraz psychologii pracy i biznesu na Uniwersytecie Jagiellońskim. Współpracuje z Wydziałem Technologii Kosmicznych AGH oraz Instytutem Psychologii Stosowanej UJ. Realizował projekty dla US AirForce i Microsoft; jego 20-letnie doświadczenie sięga czasów, gdy współtworzył jedne z pierwszych systemów bankowości elektronicznej w Polsce.</div>
-      <div class="speaker-topic">Kurs na wiatr. Czego żeglarstwo nauczyło mnie o zawodowej drodze.</div>
+      <div class="speaker-topic">Kurs na wiatr. Czego żeglarstwo nauczyło mnie o zawodowej drodze</div>
+    </div>
+
+    <div class="speaker-card reveal">
+      <div class="speaker-type">Prelekcja</div>
+      <div class="speaker-photo">
+        <img src="images/marcint.jpg" alt="Marcin Terlecki" style="transform: scale(1.2); transform-origin: 50% 20%;">
+      </div>
+      <a href="https://www.linkedin.com/in/marcin-terlecki/" target="_blank" class="speaker-linkedin-name">Marcin Terlecki <span class="li-icon">in</span></a>
+      <div class="speaker-company">Pathra</div>
+      <div class="speaker-role">Lider technologii · Inżynier danych</div>
+      <div class="speaker-bio">Na co dzień projektuje i wdraża systemy analityczne wspierające optymalne wybory — to właśnie na styku technologii i psychologii jego praca inżynierska spotyka się z naukową. Wykłada psychologię decyzji i przygotowuje doktorat o wpływie wizualizacji na trafność ocen w warunkach ryzyka. W wolnych chwilach odpoczywa od ekranów, polując na winylowe perełki.</div>
+      <div class="speaker-topic">Syndrom oszusta jako kompetencja. Nie musisz czuć się pewnie, żeby być dobrym</div>
     </div>
 
     <div class="speaker-card reveal">
@@ -1952,7 +1964,7 @@
       <div class="speaker-company">Ekspertka</div>
       <div class="speaker-role">Specjalistka komunikacji w IT</div>
       <span class="speaker-bio">Katarzyna Łazarska działa w IT jako Project &amp; Program Managerka — na co dzień w korporacji, po godzinach jako freelancerka wspierając firmy w porządkowaniu projektowego chaosu. Wierzy, że za każdym dobrym produktem stoją dobrzy ludzie, którym daje się przestrzeń i zaufanie. Aktywna w społecznościach PMI Kraków i Toastmasters, regularnie prowadzi konferencje i wydarzenia branżowe. Empatia to jej zawodowa supermoc, a odwaga w mówieniu to coś, do czego niezmiennie zachęca innych. Poza pracą: snowboard, woda i spacery bez konkretnego celu.</span>
-      <div class="speaker-topic">To nie Jira zawiodła. To komunikacja.</div>
+      <div class="speaker-topic">To nie Jira zawiodła. To komunikacja</div>
     </div>
 
     <div class="speaker-card reveal">
@@ -1978,14 +1990,6 @@
       <div class="speaker-role">Prowadząca wydarzenie · Nauczycielka i tłumaczka języków</div>
       <div class="speaker-bio" style="display:block;">Prowadząca wydarzenia biznesowe, kulturalne i społeczne. Na co dzień związana z Łódzką Specjalną Strefą Ekonomiczną, gdzie pracuje przy projektach opartych na organizacji wydarzeń, współpracy z biznesem i budowaniu relacji partnerskich. Ma doświadczenie w pracy z publicznością podczas spotkań o różnorodnym charakterze: od konferencji i paneli dyskusyjnych po inicjatywy społeczne oraz TEDx. Na scenie łączy profesjonalizm z naturalnością i dobrym wyczuciem rytmu wydarzenia, dbając o płynny przebieg programu i właściwą energię spotkania. Prywatnie miłośniczka brytyjskiej kultury, literatury i teatru.</div>
       <div class="speaker-topic" style="border-left-color:var(--orange);">To ona nada rytm naszej konferencji!</div>
-    </div>
-
-    <div class="speaker-card reveal speaker-soon">
-      <div class="speaker-type" style="background:rgba(23,86,244,0.06);color:var(--muted);">Już wkrótce</div>
-      <div class="speaker-soon-inner">
-        <div class="speaker-soon-icon">✦</div>
-        <div class="speaker-soon-label">Prelegent zostanie ogłoszony wkrótce</div>
-      </div>
     </div>
 
     <div class="speaker-card reveal speaker-soon">
