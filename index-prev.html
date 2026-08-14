@@ -2033,7 +2033,7 @@
 
   <div class="tickets-grid">
     <div class="ticket-card promo reveal">
-      <span class="promo-badge">🔥 Najtaniej teraz</span>
+      <span class="promo-badge">🔥 Przedłużone do środy 12.08</span>
       <div class="ticket-name">Early Bird</div>
       <div class="promo-price">
         <span class="promo-old">129 zł</span>
@@ -2050,7 +2050,7 @@
           <div class="countdown-unit"><div class="countdown-num" id="eb-s">--</div><div class="countdown-cap">sek</div></div>
         </div>
       </div>
-      <p class="countdown-deadline">Cena Early Bird obowiązuje <strong>do 10 sierpnia</strong> lub do wyczerpania puli.</p>
+      <p class="countdown-deadline">Przedłużamy! Cena Early Bird obowiązuje <strong>do środy 12 sierpnia</strong> (do końca dnia) lub do wyczerpania puli.</p>
       <div style="flex:1;"></div>
       <a href="https://www.kupbilecik.pl/imprezy/208557/Pabianice/PabiaNICE+Conference/" class="ticket-btn" target="_blank">Kup bilet za 50 zł →</a>
     </div>
@@ -2063,12 +2063,12 @@
       <a href="https://www.kupbilecik.pl/imprezy/208557/Pabianice/PabiaNICE+Conference/" class="ticket-btn" target="_blank">Kup bilet →</a>
     </div>
 
-    <div class="ticket-card reveal" style="background:rgba(255,255,255,0.06);border:2px dashed rgba(255,255,255,0.15);">
-      <div class="ticket-name" style="display:flex;align-items:center;gap:0.5rem;">Regular <span style="font-size:0.65rem;background:rgba(255,217,61,0.15);color:#ffd93d;padding:0.15rem 0.5rem;border-radius:100px;">wkrótce</span></div>
-      <div class="ticket-price" style="color:rgba(255,255,255,0.25);">129<span>zł</span></div>
-      <div class="ticket-desc" style="color:rgba(255,255,255,0.3);">Nie czekaj aż wpadną kolejne błędy i podniosą nam ceny!</div>
+    <div class="ticket-card reveal">
+      <div class="ticket-name">Regular</div>
+      <div class="ticket-price">129<span>zł</span></div>
+      <div class="ticket-desc">Nie czekaj aż wpadną kolejne błędy i podniosą nam ceny!</div>
       <div style="flex:1;"></div>
-      <span class="ticket-btn" style="opacity:0.3;cursor:not-allowed;">Dla tych co będą ostatnimi</span>
+      <a href="https://www.kupbilecik.pl/imprezy/208557/Pabianice/PabiaNICE+Conference/" class="ticket-btn" target="_blank">Kup bilet →</a>
     </div>
 
     <div class="ticket-card reveal">
@@ -2399,11 +2399,11 @@
     if (!wasOpen) item.classList.add('open');
   }
 
-  // Early Bird countdown – 10 sierpnia 2026, 00:00 czasu polskiego (CEST, UTC+2)
+  // Early Bird countdown – koniec 12 sierpnia 2026, 23:59:59 czasu polskiego (CEST, UTC+2)
   (function () {
     const box = document.getElementById('eb-countdown');
     if (!box) return;
-    const deadline = Date.UTC(2026, 7, 9, 22, 0, 0); // 2026-08-10 00:00 +02:00
+    const deadline = Date.UTC(2026, 7, 12, 22, 0, 0); // 2026-08-13 00:00 +02:00 = koniec 12.08
     const els = {
       d: document.getElementById('eb-d'),
       h: document.getElementById('eb-h'),

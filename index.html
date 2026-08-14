@@ -919,9 +919,13 @@
   }
 
   .ticket-card.featured {
-    background: white;
-    border-color: transparent;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    background: rgba(26,44,255,0.08);
+    border: 2px solid rgba(26,44,255,0.55);
+    box-shadow: 0 18px 50px rgba(26,44,255,0.18);
+  }
+
+  .ticket-card.featured:hover {
+    border-color: rgba(26,44,255,0.85);
   }
 
   .ticket-name {
@@ -932,8 +936,6 @@
     color: rgba(255,255,255,0.45);
   }
 
-  .ticket-card.featured .ticket-name { color: var(--muted); }
-
   .ticket-price {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 800;
@@ -942,8 +944,6 @@
     color: white;
     line-height: 1;
   }
-
-  .ticket-card.featured .ticket-price { color: var(--text); }
 
   .ticket-price span {
     font-size: 1.1rem;
@@ -957,8 +957,6 @@
     color: rgba(255,255,255,0.5);
     line-height: 1.6;
   }
-
-  .ticket-card.featured .ticket-desc { color: var(--muted); }
 
   .ticket-perks {
     list-style: none;
@@ -975,8 +973,6 @@
     gap: 0.6rem;
     align-items: flex-start;
   }
-
-  .ticket-card.featured .ticket-perks li { color: var(--muted); }
 
   .ticket-perks li::before {
     content: '✓';
@@ -1177,6 +1173,38 @@
   .ticket-card.promo .ticket-btn:hover {
     box-shadow: 0 10px 30px rgba(246,172,17,0.4);
   }
+
+  /* ── EARLY BIRD (wygasły) ── */
+  .ticket-card.promo.expired {
+    background: rgba(255,255,255,0.03);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: none;
+    filter: grayscale(1);
+    opacity: 0.55;
+  }
+
+  .ticket-card.promo.expired::after { display: none; }
+
+  .ticket-card.promo.expired .promo-badge {
+    background: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.5);
+    animation: none;
+  }
+
+  .ticket-card.promo.expired .promo-new { color: rgba(255,255,255,0.6); }
+
+  .ticket-card.promo.expired .countdown-label { color: rgba(255,255,255,0.4); }
+
+  .ticket-card.promo.expired .countdown-deadline strong { color: rgba(255,255,255,0.5); }
+
+  .ticket-card.promo.expired .ticket-btn {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.4);
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .ticket-card.promo.expired .ticket-btn:hover { box-shadow: none; }
 
   /* ── BILETY GRUPOWE ── */
   .group-tickets-inner {
@@ -2032,8 +2060,8 @@
   </div>
 
   <div class="tickets-grid">
-    <div class="ticket-card promo reveal">
-      <span class="promo-badge">🔥 Przedłużone do środy 12.08</span>
+    <div class="ticket-card promo expired reveal">
+      <span class="promo-badge">Zakończone</span>
       <div class="ticket-name">Early Bird</div>
       <div class="promo-price">
         <span class="promo-old">129 zł</span>
@@ -2041,32 +2069,23 @@
         <span class="promo-save">−61%</span>
       </div>
       <div class="ticket-desc">Error 500 - dla zdecydowanych i szybkich, którzy chcą uniknąć Internal Server Error - limitowana pula. Złap ogrom wiedzy w cenie kebaba i coli!</div>
-      <div class="countdown" id="eb-countdown">
-        <div class="countdown-label">Promocja kończy się za</div>
-        <div class="countdown-units">
-          <div class="countdown-unit"><div class="countdown-num" id="eb-d">--</div><div class="countdown-cap">dni</div></div>
-          <div class="countdown-unit"><div class="countdown-num" id="eb-h">--</div><div class="countdown-cap">godz</div></div>
-          <div class="countdown-unit"><div class="countdown-num" id="eb-m">--</div><div class="countdown-cap">min</div></div>
-          <div class="countdown-unit"><div class="countdown-num" id="eb-s">--</div><div class="countdown-cap">sek</div></div>
-        </div>
-      </div>
-      <p class="countdown-deadline">Przedłużamy! Cena Early Bird obowiązuje <strong>do środy 12 sierpnia</strong> (do końca dnia) lub do wyczerpania puli.</p>
+      <p class="countdown-deadline">Pula Early Bird została wyczerpana. Aktualna cena to bilet <strong>Regular</strong>.</p>
       <div style="flex:1;"></div>
-      <a href="https://www.kupbilecik.pl/imprezy/208557/Pabianice/PabiaNICE+Conference/" class="ticket-btn" target="_blank">Kup bilet za 50 zł →</a>
+      <a class="ticket-btn">Pula wyczerpana</a>
+    </div>
+
+    <div class="ticket-card featured reveal">
+      <div class="ticket-name">Regular</div>
+      <div class="ticket-price">129<span>zł</span></div>
+      <div class="ticket-desc">Nie czekaj aż wpadną kolejne błędy i podniosą nam ceny!</div>
+      <div style="flex:1;"></div>
+      <a href="https://www.kupbilecik.pl/imprezy/208557/Pabianice/PabiaNICE+Conference/" class="ticket-btn" target="_blank">Kup bilet →</a>
     </div>
 
     <div class="ticket-card reveal">
       <div class="ticket-name">Uczeń / Student</div>
       <div class="ticket-price">40,0<span style="font-size:0.9rem;opacity:0.7;">zł</span></div>
       <div class="ticket-desc">Error 400 – tak tanio, że to musi być Bad Request. Dla pełnoletnich uczniów i studentów z ważną legitymacją.</div>
-      <div style="flex:1;"></div>
-      <a href="https://www.kupbilecik.pl/imprezy/208557/Pabianice/PabiaNICE+Conference/" class="ticket-btn" target="_blank">Kup bilet →</a>
-    </div>
-
-    <div class="ticket-card reveal">
-      <div class="ticket-name">Regular</div>
-      <div class="ticket-price">129<span>zł</span></div>
-      <div class="ticket-desc">Nie czekaj aż wpadną kolejne błędy i podniosą nam ceny!</div>
       <div style="flex:1;"></div>
       <a href="https://www.kupbilecik.pl/imprezy/208557/Pabianice/PabiaNICE+Conference/" class="ticket-btn" target="_blank">Kup bilet →</a>
     </div>
@@ -2398,36 +2417,6 @@
     document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
     if (!wasOpen) item.classList.add('open');
   }
-
-  // Early Bird countdown – koniec 12 sierpnia 2026, 23:59:59 czasu polskiego (CEST, UTC+2)
-  (function () {
-    const box = document.getElementById('eb-countdown');
-    if (!box) return;
-    const deadline = Date.UTC(2026, 7, 12, 22, 0, 0); // 2026-08-13 00:00 +02:00 = koniec 12.08
-    const els = {
-      d: document.getElementById('eb-d'),
-      h: document.getElementById('eb-h'),
-      m: document.getElementById('eb-m'),
-      s: document.getElementById('eb-s')
-    };
-    const pad = n => String(n).padStart(2, '0');
-
-    function tick() {
-      let diff = Math.floor((deadline - Date.now()) / 1000);
-      if (diff <= 0) {
-        box.innerHTML = '<div class="countdown-label" style="margin:0;">Pula Early Bird zamknięta</div>';
-        clearInterval(timer);
-        return;
-      }
-      els.d.textContent = pad(Math.floor(diff / 86400));
-      els.h.textContent = pad(Math.floor(diff / 3600) % 24);
-      els.m.textContent = pad(Math.floor(diff / 60) % 60);
-      els.s.textContent = pad(diff % 60);
-    }
-
-    tick();
-    const timer = setInterval(tick, 1000);
-  })();
 
   // Agenda expand buttons
   document.querySelectorAll('.agenda-expand').forEach(btn => {
