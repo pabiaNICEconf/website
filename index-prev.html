@@ -928,6 +928,44 @@
     border-color: rgba(26,44,255,0.85);
   }
 
+  .ticket-card.student {
+    background: rgba(0,214,143,0.08);
+    border: 2px solid rgba(0,214,143,0.4);
+  }
+
+  .ticket-card.student:hover {
+    border-color: rgba(0,214,143,0.7);
+  }
+
+  .ticket-card.student .ticket-btn {
+    background: rgba(0,214,143,0.15);
+    color: var(--green);
+    border: 1px solid rgba(0,214,143,0.4);
+  }
+
+  .ticket-card.student .ticket-btn:hover {
+    box-shadow: 0 8px 24px rgba(0,214,143,0.3);
+  }
+
+  .ticket-card.supporter {
+    background: rgba(246,172,17,0.08);
+    border: 2px solid rgba(246,172,17,0.4);
+  }
+
+  .ticket-card.supporter:hover {
+    border-color: rgba(246,172,17,0.7);
+  }
+
+  .ticket-card.supporter .ticket-btn {
+    background: rgba(246,172,17,0.15);
+    color: var(--yellow);
+    border: 1px solid rgba(246,172,17,0.4);
+  }
+
+  .ticket-card.supporter .ticket-btn:hover {
+    box-shadow: 0 8px 24px rgba(246,172,17,0.3);
+  }
+
   .ticket-name {
     font-size: 0.72rem;
     font-weight: 700;
@@ -2076,13 +2114,18 @@
 
     <div class="ticket-card featured reveal">
       <div class="ticket-name">Regular</div>
-      <div class="ticket-price">129<span>zł</span></div>
+      <div class="promo-price">
+        <span class="promo-old">129 zł</span>
+        <span class="promo-new">79<span>zł</span></span>
+        <span class="promo-save">−39%</span>
+      </div>
       <div class="ticket-desc">Nie czekaj aż wpadną kolejne błędy i podniosą nam ceny!</div>
+      <p class="countdown-deadline">Ograniczona pula biletów w tej cenie. Kupuj zanim zobaczysz <strong>Error: SoldOut</strong>.</p>
       <div style="flex:1;"></div>
       <a href="https://www.kupbilecik.pl/imprezy/208557/Pabianice/PabiaNICE+Conference/" class="ticket-btn" target="_blank">Kup bilet →</a>
     </div>
 
-    <div class="ticket-card reveal">
+    <div class="ticket-card student reveal">
       <div class="ticket-name">Uczeń / Student</div>
       <div class="ticket-price">40,0<span style="font-size:0.9rem;opacity:0.7;">zł</span></div>
       <div class="ticket-desc">Error 400 – tak tanio, że to musi być Bad Request. Dla pełnoletnich uczniów i studentów z ważną legitymacją.</div>
@@ -2090,10 +2133,10 @@
       <a href="https://www.kupbilecik.pl/imprezy/208557/Pabianice/PabiaNICE+Conference/" class="ticket-btn" target="_blank">Kup bilet →</a>
     </div>
 
-    <div class="ticket-card reveal">
+    <div class="ticket-card supporter reveal">
       <div class="ticket-name">Supporter</div>
       <div class="ticket-price">302<span>zł</span></div>
-      <div class="ticket-desc">Jesteś niczym FOUNDer naszej konferencji! Wspierasz konferencję i lokalną społeczność. Dodatkowo: wzmianka w social mediach i podziękowanie podczas konferencji.</div>
+      <div class="ticket-desc">Jesteś niczym FOUNDer - wspierasz konferencję i lokalną społeczność. Kupując <strong style="color:var(--yellow);">jeden</strong> bilet dla siebie, tak naprawdę kupujesz ich aż <strong style="color:var(--yellow);">sześć</strong> i dzięki temu pozwalasz piątce uczniów bezpłatnie wziąć udział w konferencji — warto pomagać!</div>
       <div style="flex:1;"></div>
       <a href="https://www.kupbilecik.pl/imprezy/208557/Pabianice/PabiaNICE+Conference/" class="ticket-btn" target="_blank">Wesprzyj →</a>
     </div>
