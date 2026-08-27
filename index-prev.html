@@ -1898,11 +1898,11 @@
 
       <div class="agenda-item">
         <div class="agenda-time">13:20</div>
-        <div class="agenda-card open-slot">
-           <div class="agenda-tag">Prelekcja · Partner</div>
-          <div class="agenda-card-title">Szczegóły wkrótce!</div>
-          <div class="agenda-speaker">TBA · 20 min</div>
- <div class="agenda-desc">Szczegóły już wkrótce!</div>
+        <div class="agenda-card" onclick="this.classList.toggle('expanded')" style="cursor:pointer;">
+          <div class="agenda-tag">Prelekcja</div>
+          <div class="agenda-card-title">ADHD na szczycie — wspinaczka bez mapy</div>
+          <div class="agenda-speaker">Grzegorz Jaworek (Ambit Career) · 20 min</div>
+          <div class="agenda-desc">Przez dwadzieścia lat biegłem szlakiem, który tylko wyglądał na mój. Solidny, pragmatyczny rzemieślnik kodu, nigdy artysta, a pod spodem tlił się lęk oraz zwykłe przebodźcowanie. Długo myślałem, że słabnę, zanim zdałem sobie sprawę, że szedłem nie swoim szlakiem, w nie swoim tempie, bez mapy. To nie był kryzys kompetencji, tylko kryzys dopasowania. Zszedłem więc z wydeptanej ścieżki, zawiesiłem klawiaturę na kołku i zaufałem intuicji — zacząłem dobierać role do ludzi, czytać energię zespołu, stawiać na ich mocne strony. Tak zbudowałem zaangażowane zespoły na trzech kontynentach. Diagnozę ADHD dostałem dopiero na szczycie, jako CTO — i dopiero stamtąd zobaczyłem całą przebytą trasę. To, co latami brałem za wadę, okazało się moim napędem. Opowiem, dlaczego w tej wspinaczce najważniejszy jest człowiek — i co zyskuje zespół, gdy lider zna jego tempo oraz własne tętno.</div>
           <button class="agenda-expand">Czytaj więcej ↓</button>
         </div>
       </div>
@@ -2035,6 +2035,18 @@
     </div>
 
     <div class="speaker-card reveal">
+      <div class="speaker-type">Prelekcja</div>
+      <div class="speaker-photo">
+        <img src="images/grzegorzj.png" alt="Grzegorz Jaworek" style="transform: scale(1.15); transform-origin: 50% 10%;">
+      </div>
+      <a href="https://www.linkedin.com/in/gregjaworek/" target="_blank" class="speaker-linkedin-name">Grzegorz Jaworek <span class="li-icon">in</span></a>
+      <div class="speaker-company">Ambit Career</div>
+      <div class="speaker-role">Mentor · CTO · Praktyk AI</div>
+      <div class="speaker-bio">Przeszedł w karierze pełną drogę. Od programisty, przez wynieś przynieś pozamiataj po CTO. Budował od zera ponad 100 osobowe zespoły na trzech kontynentach. Diagnozę ADHD usłyszał dopiero na szczycie i dziś otwarcie opowiada, jak to, co latami maskował, okazało się jego najmocniejszą stroną. Jako mentor pomaga specjalistom i liderom świadomie projektować karierę która ma sens i cel. Tworzy Ambit Career — platformę, w której AI trenowane przez prawdziwych mentorów pomaga zaplanować całą drogę zawodową, a nie tylko znaleźć kolejną pracę. Od ponad siedmiu lat biega maratony.</div>
+      <div class="speaker-topic">ADHD na szczycie — wspinaczka bez mapy</div>
+    </div>
+
+    <div class="speaker-card reveal">
       <div class="speaker-type keynote-badge">Keynote</div>
       <div class="speaker-photo"><img src="images/maciejsz.jpg" alt="Maciej Szałek" style="transform: scale(1.0); transform-origin: 70% 0%;"></div>
       <a href="https://www.linkedin.com/in/szalekmaciej/" target="_blank" class="speaker-linkedin-name">Maciej Szałek <span class="li-icon">in</span></a>
@@ -2057,14 +2069,6 @@
       <div class="speaker-role">Prowadząca wydarzenie · Nauczycielka i tłumaczka języków</div>
       <div class="speaker-bio" style="display:block;">Prowadząca wydarzenia biznesowe, kulturalne i społeczne. Na co dzień związana z Łódzką Specjalną Strefą Ekonomiczną, gdzie pracuje przy projektach opartych na organizacji wydarzeń, współpracy z biznesem i budowaniu relacji partnerskich. Ma doświadczenie w pracy z publicznością podczas spotkań o różnorodnym charakterze: od konferencji i paneli dyskusyjnych po inicjatywy społeczne oraz TEDx. Na scenie łączy profesjonalizm z naturalnością i dobrym wyczuciem rytmu wydarzenia, dbając o płynny przebieg programu i właściwą energię spotkania. Prywatnie miłośniczka brytyjskiej kultury, literatury i teatru.</div>
       <div class="speaker-topic" style="border-left-color:var(--orange);">To ona nada rytm naszej konferencji!</div>
-    </div>
-
-    <div class="speaker-card reveal speaker-soon">
-      <div class="speaker-type" style="background:rgba(23,86,244,0.06);color:var(--muted);">Już wkrótce</div>
-      <div class="speaker-soon-inner">
-        <div class="speaker-soon-icon">✦</div>
-        <div class="speaker-soon-label">Prelegent zostanie ogłoszony wkrótce</div>
-      </div>
     </div>
 
     <div class="speaker-card reveal speaker-soon">
@@ -2166,73 +2170,91 @@
 <!-- PARTNERS -->
 <section class="partners" id="partnerzy">
   <div class="partners-intro">
-    <div class="reveal">
-      <p class="section-eyebrow">Partnerzy</p>
-      <h2 class="section-title">Zbudujmy to razem.</h2>
-      <p class="section-desc">PabiaNICE Conference to event non-profit dla społeczności. Wsparcie naszej inicjatywy w formie partnerstwa jest wkładem w coś wartościowego dla Twojej firmy i regionu. </p>
+    <!-- LEFT COLUMN -->
+    <div>
+      <div class="reveal">
+        <p class="section-eyebrow">Partnerzy</p>
+        <h2 class="section-title">Zbudujmy to razem.</h2>
+        <p class="section-desc">PabiaNICE Conference to event non-profit dla społeczności. Wsparcie naszej inicjatywy w formie partnerstwa jest wkładem w coś wartościowego dla Twojej firmy i regionu. </p>
 
-      <div class="partner-tiers" style="margin-top:2rem;">
-        <div class="partner-tier tier-gold">
-          <div class="partner-tier-badge">👑</div>
-          <div>
-            <div class="partner-tier-name">Partner Strategiczny</div>
-            <div class="partner-tier-desc">Własny mówca w agendzie (20 min), stand lub roll-up na scenie, 10 zaproszeń, logo w materiałach drukowanych i na scenie, posty w social mediach, możliwość nagrania wideo promocyjnego na scenie</div>
+        <div class="partner-tiers" style="margin-top:2rem;">
+          <div class="partner-tier tier-gold">
+            <div class="partner-tier-badge">👑</div>
+            <div>
+              <div class="partner-tier-name">Partner Strategiczny</div>
+              <div class="partner-tier-desc">Własny mówca w agendzie (20 min), stand lub roll-up na scenie, 10 zaproszeń, logo w materiałach drukowanych i na scenie, posty w social mediach, możliwość nagrania wideo promocyjnego na scenie</div>
+            </div>
+          </div>
+          <div class="partner-tier tier-silver">
+            <div class="partner-tier-badge">⭐</div>
+            <div>
+              <div class="partner-tier-name">Partner Główny</div>
+              <div class="partner-tier-desc">Dystrybucja ulotek i gadżetów, stand lub roll-up na scenie, 5 zaproszeń, logo w materiałach i na scenie, posty w social mediach, nagranie wideo promocyjnego</div>
+            </div>
+          </div>
+          <div class="partner-tier tier-patron">
+            <div class="partner-tier-badge">🤝</div>
+            <div>
+              <div class="partner-tier-name">Partner</div>
+              <div class="partner-tier-desc">Roll-up w venue, 2 zaproszenia, logo w materiałach drukowanych i na scenie, post w social mediach</div>
+            </div>
           </div>
         </div>
-        <div class="partner-tier tier-silver">
-          <div class="partner-tier-badge">⭐</div>
-          <div>
-            <div class="partner-tier-name">Partner Główny</div>
-            <div class="partner-tier-desc">Dystrybucja ulotek i gadżetów, stand lub roll-up na scenie, 5 zaproszeń, logo w materiałach i na scenie, posty w social mediach, nagranie wideo promocyjnego</div>
-          </div>
-        </div>
-        <div class="partner-tier tier-patron">
-          <div class="partner-tier-badge">🤝</div>
-          <div>
-            <div class="partner-tier-name">Partner</div>
-            <div class="partner-tier-desc">Roll-up w venue, 2 zaproszenia, logo w materiałach drukowanych i na scenie, post w social mediach</div>
-          </div>
+
+        <div style="margin-top:1.5rem;">
+          <a href="attachments/OfertaPartner.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.85rem;font-weight:600;color:var(--blue-mid);text-decoration:none;padding:0.6rem 1rem;border:1px solid rgba(26,44,255,0.2);border-radius:100px;transition:background 0.2s,border-color 0.2s;" onmouseover="this.style.background='rgba(26,44,255,0.05)';this.style.borderColor='rgba(26,44,255,0.4)'" onmouseout="this.style.background='';this.style.borderColor='rgba(26,44,255,0.2)'">
+            📥 Pobierz ofertę partnerską (PDF)
+          </a>
         </div>
       </div>
 
-      <div style="margin-top:1.5rem;">
-        <a href="attachments/OfertaPartner.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.85rem;font-weight:600;color:var(--blue-mid);text-decoration:none;padding:0.6rem 1rem;border:1px solid rgba(26,44,255,0.2);border-radius:100px;transition:background 0.2s,border-color 0.2s;" onmouseover="this.style.background='rgba(26,44,255,0.05)';this.style.borderColor='rgba(26,44,255,0.4)'" onmouseout="this.style.background='';this.style.borderColor='rgba(26,44,255,0.2)'">
-          📥 Pobierz ofertę partnerską (PDF)
-        </a>
+      <div class="partners-cta-box reveal" style="margin-top:2rem;">
+        <h3>Zostań partnerem</h3>
+        <p>Napisz do nas – dobierzemy formę współpracy do Twojego budżetu i celów. Każda forma wsparcia jest dla nas cenna.</p>
+        <a href="mailto:kontakt@pabianiceconference.pl?subject=Partnerstwo – PabiaNICE Conference" class="btn-grad" style="display:inline-flex;">Napisz do nas →</a>
+        <p style="margin-top:1rem;font-size:0.8rem;color:rgba(255,255,255,0.3);">kontakt@pabianiceconference.pl</p>
       </div>
     </div>
 
-    <div style="background:#ffffff;border:1px solid rgba(23,86,244,0.15);border-radius:16px;padding:1.25rem 1.5rem;margin-top:2rem;" class="reveal">
-      <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue-mid);margin-bottom:1rem;">Współorganizator i patronaty</p>
-      <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;justify-content:flex-start;">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;text-align:center;">
-          <img src="images/prezydent.jpeg" alt="Prezydent Miasta Pabianic – Grzegorz Mackiewicz" style="height:130px;width:auto;display:block;">
-          <span style="font-size:0.75rem;color:var(--muted);font-weight:600;">Patronat Prezydenta Miasta</span>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;text-align:center;">
-          <img src="images/powiat.jpeg" alt="Patronat Starosty Pabianickiego" style="height:130px;width:auto;display:block;">
-          <span style="font-size:0.75rem;color:var(--muted);font-weight:600;">Współorganizator</span>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;text-align:center;">
-          <a href="https://connect.aplikuj.pl/" target="_blank" rel="noopener">
-            <img src="images/AplikujConnect2.jpeg" alt="Aplikuj Connect" style="height:130px;width:auto;display:block;">
-          </a>
-          <span style="font-size:0.75rem;color:var(--muted);font-weight:600;">Patronat Medialny</span>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;text-align:center;">
-          <a href="https://www.praca.pl/" target="_blank" rel="noopener">
-            <img src="images/PracaPl2.jpeg" alt="praca.pl" style="height:130px;width:auto;display:block;">
-          </a>
-          <span style="font-size:0.75rem;color:var(--muted);font-weight:600;">Patronat Medialny</span>
+    <!-- RIGHT COLUMN -->
+    <div>
+      <div style="background:#ffffff;border:1px solid rgba(23,86,244,0.15);border-radius:16px;padding:1.25rem 1.5rem;" class="reveal">
+        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue-mid);margin-bottom:1rem;">Współorganizator i patronaty</p>
+        <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;justify-content:flex-start;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;text-align:center;">
+            <img src="images/prezydent.jpeg" alt="Prezydent Miasta Pabianic – Grzegorz Mackiewicz" style="height:130px;width:auto;display:block;">
+            <span style="font-size:0.75rem;color:var(--muted);font-weight:600;">Patronat Prezydenta Miasta</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;text-align:center;">
+            <img src="images/powiat.jpeg" alt="Patronat Starosty Pabianickiego" style="height:130px;width:auto;display:block;">
+            <span style="font-size:0.75rem;color:var(--muted);font-weight:600;">Współorganizator</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;text-align:center;">
+            <a href="https://connect.aplikuj.pl/" target="_blank" rel="noopener">
+              <img src="images/AplikujConnect2.jpeg" alt="Aplikuj Connect" style="height:130px;width:auto;display:block;">
+            </a>
+            <span style="font-size:0.75rem;color:var(--muted);font-weight:600;">Patronat Medialny</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;text-align:center;">
+            <a href="https://www.praca.pl/" target="_blank" rel="noopener">
+              <img src="images/PracaPl2.jpeg" alt="praca.pl" style="height:130px;width:auto;display:block;">
+            </a>
+            <span style="font-size:0.75rem;color:var(--muted);font-weight:600;">Patronat Medialny</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="partners-cta-box reveal">
-      <h3>Zostań partnerem</h3>
-      <p>Napisz do nas – dobierzemy formę współpracy do Twojego budżetu i celów. Każda forma wsparcia jest dla nas cenna.</p>
-      <a href="mailto:kontakt@pabianiceconference.pl?subject=Partnerstwo – PabiaNICE Conference" class="btn-grad" style="display:inline-flex;">Napisz do nas →</a>
-      <p style="margin-top:1rem;font-size:0.8rem;color:rgba(255,255,255,0.3);">kontakt@pabianiceconference.pl</p>
+      <div style="background:#ffffff;border:1px solid rgba(23,86,244,0.15);border-radius:16px;padding:1.25rem 1.5rem;margin-top:1.5rem;" class="reveal">
+        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue-mid);margin-bottom:1rem;">Partnerzy</p>
+        <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;justify-content:flex-start;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;text-align:center;">
+            <a href="https://pathra.eu/" target="_blank" rel="noopener">
+              <img src="images/pathra.png" alt="Pathra" style="height:80px;width:auto;display:block;">
+            </a>
+            <span style="font-size:0.75rem;color:var(--muted);font-weight:600;">Partner</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
