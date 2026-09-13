@@ -181,6 +181,18 @@
     max-width: 900px;
   }
 
+  /* Hero w dwóch kolumnach: treść + countdown po prawej */
+  .hero-layout {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 900px) minmax(300px, 380px);
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-layout .hero-content { max-width: none; }
+
   .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -251,6 +263,146 @@
   }
 
   .hero-sub strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+
+  /* ── COUNTDOWN ── */
+  /* ── COUNTDOWN (panel po prawej stronie hero) ── */
+  .hero-countdown {
+    opacity: 0;
+    animation: fadeUp 0.6s 0.5s forwards;
+    background: linear-gradient(160deg, rgba(23,86,244,0.55) 0%, rgba(14,63,204,0.42) 50%, rgba(26,143,255,0.3) 100%);
+    border: 1px solid rgba(86,195,255,0.45);
+    border-radius: 24px;
+    padding: 2rem 1.75rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 24px 70px rgba(23,86,244,0.4), 0 0 0 1px rgba(255,255,255,0.05) inset;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* subtelna poświata w rogu panelu */
+  .hero-countdown::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, rgba(246,172,17,0.5) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .countdown-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 1.25rem;
+  }
+
+  .countdown-label .badge-dot { background: var(--yellow); }
+
+  .countdown-units {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+
+  .countdown-unit {
+    background: rgba(3,8,32,0.42);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 16px;
+    padding: 1rem 0.4rem;
+    text-align: center;
+  }
+
+  .countdown-num {
+    display: block;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 2.1rem;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 0 22px rgba(86,195,255,0.7);
+  }
+
+  /* dni wyróżnione akcentem – najważniejsza liczba */
+  .countdown-unit.is-primary {
+    background: rgba(246,172,17,0.2);
+    border-color: rgba(246,172,17,0.65);
+    box-shadow: 0 0 24px rgba(246,172,17,0.28);
+  }
+
+  .countdown-unit.is-primary .countdown-num {
+    color: var(--yellow);
+    text-shadow: 0 0 26px rgba(246,172,17,0.75);
+  }
+
+  .countdown-unit-label {
+    display: block;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-top: 0.5rem;
+  }
+
+  .countdown-footer {
+    position: relative;
+    margin-top: 1.25rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+  }
+
+  .countdown-live {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+    padding: 1rem 0.5rem;
+  }
+
+  .countdown-live .live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(0,214,143,0.15);
+    border: 1px solid rgba(0,214,143,0.45);
+    border-radius: 100px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+
+  .countdown-live .live-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: blink 1.5s infinite;
+    flex-shrink: 0;
+  }
+
+  .countdown-live strong {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: #fff;
+    line-height: 1.3;
+  }
 
   .hero-actions {
     display: flex;
@@ -1146,53 +1298,6 @@
     transform: rotate(-3deg);
   }
 
-  .countdown {
-    background: rgba(0,0,0,0.28);
-    border: 1px solid rgba(246,172,17,0.3);
-    border-radius: 14px;
-    padding: 0.85rem 0.75rem;
-  }
-
-  .countdown-label {
-    font-size: 0.66rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--yellow);
-    text-align: center;
-    margin-bottom: 0.6rem;
-  }
-
-  .countdown-units {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.4rem;
-  }
-
-  .countdown-unit {
-    text-align: center;
-    background: rgba(255,255,255,0.06);
-    border-radius: 10px;
-    padding: 0.45rem 0.2rem;
-  }
-
-  .countdown-num {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-weight: 800;
-    font-size: 1.4rem;
-    line-height: 1;
-    color: white;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .countdown-cap {
-    font-size: 0.6rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-    margin-top: 0.25rem;
-  }
-
   .countdown-deadline {
     font-size: 0.78rem;
     color: rgba(255,255,255,0.55);
@@ -1231,7 +1336,6 @@
 
   .ticket-card.promo.expired .promo-new { color: rgba(255,255,255,0.6); }
 
-  .ticket-card.promo.expired .countdown-label { color: rgba(255,255,255,0.4); }
 
   .ticket-card.promo.expired .countdown-deadline strong { color: rgba(255,255,255,0.5); }
 
@@ -1355,26 +1459,41 @@
 
   .partner-tier-desc { font-size: 0.8rem; color: var(--muted); }
 
-  .partners-cta-box {
-    background: var(--dark);
-    border-radius: 20px;
-    padding: 2rem;
-    color: white;
+  /* Nabór partnerów zamknięty – wyszarzone kafelki */
+  .partner-tiers.is-closed .partner-tier {
+    filter: grayscale(1);
+    opacity: 0.55;
   }
 
-  .partners-cta-box h3 {
+  .partners-closed-note {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(23,86,244,0.04);
+    border: 1px solid rgba(23,86,244,0.15);
+    border-radius: 14px;
+    padding: 0.9rem 1.15rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .partners-closed-note .closed-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .partners-closed-note strong {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700;
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.15rem;
   }
 
-  .partners-cta-box p {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.7;
-    margin-bottom: 1.25rem;
-    font-weight: 300;
+  .partners-closed-note span.closed-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
   }
 
   .partners-placeholder {
@@ -1595,6 +1714,11 @@
   .reveal.visible { opacity: 1; transform: none; }
 
   /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .hero-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-countdown { max-width: 460px; }
+  }
+
   @media (max-width: 900px) {
     .about-grid, .partners-intro, .faq-grid, .venue-grid, .agenda-layout { grid-template-columns: 1fr; gap: 2.5rem; }
     .agenda-sidebar { position: static; }
@@ -1631,6 +1755,11 @@
 
   @media (max-width: 480px) {
     .agenda-item { grid-template-columns: 70px 1fr; gap: 0.75rem; }
+    .hero-countdown { padding: 1.5rem 1.15rem; }
+    .countdown-units { gap: 0.5rem; }
+    .countdown-unit { padding: 0.75rem 0.25rem; }
+    .countdown-num { font-size: 1.6rem; }
+    .countdown-unit-label { font-size: 0.58rem; letter-spacing: 0.04em; }
   }
 
   .speaker-photo {
@@ -1681,6 +1810,7 @@
   <div class="hero-bg"></div>
   <div class="hero-grid-lines"></div>
 
+  <div class="hero-layout">
   <div class="hero-content">
     <div class="hero-badge">
       <span class="badge-dot"></span>
@@ -1721,6 +1851,34 @@
         <span class="stat-label">Programu</span>
       </div>
     </div>
+  </div>
+
+  <!-- COUNTDOWN – prawa kolumna hero -->
+  <aside class="hero-countdown" id="countdown" aria-live="polite">
+    <p class="countdown-label">
+      <span class="badge-dot"></span>
+      Do wydarzenia zostało
+    </p>
+    <div class="countdown-units" id="countdown-units">
+      <div class="countdown-unit is-primary">
+        <span class="countdown-num" id="cd-days">–</span>
+        <span class="countdown-unit-label" id="cd-days-label">dni</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-num" id="cd-hours">–</span>
+        <span class="countdown-unit-label" id="cd-hours-label">godzin</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-num" id="cd-minutes">–</span>
+        <span class="countdown-unit-label" id="cd-minutes-label">minut</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-num" id="cd-seconds">–</span>
+        <span class="countdown-unit-label" id="cd-seconds-label">sekund</span>
+      </div>
+    </div>
+    <p class="countdown-footer">Sobota, 12 września · 10:00</p>
+  </aside>
   </div>
 </section>
 
@@ -1784,7 +1942,7 @@
       <div class="agenda-summary">
         <p class="agenda-summary-title">W skrócie</p>
         <div class="summary-row"><span>🎤</span><span>2 keynote'y</span></div>
-        <div class="summary-row"><span>🗣️</span><span>8 prelekcji + 1 panel dyskusyjny</span></div>
+        <div class="summary-row"><span>🗣️</span><span>6 prelekcji + 1 panel dyskusyjny</span></div>
         <div class="summary-row"><span>☕</span><span>3 przerwy kawowe / networking</span></div>
         <div class="summary-row"><span>⏱️</span><span>15–20 min / prelekcja</span></div>
         <div class="summary-row"><span>🎭</span><span>Scena teatralna, widownia na 200 os.</span></div>
@@ -2180,7 +2338,15 @@
         <h2 class="section-title">Zbudujmy to razem.</h2>
         <p class="section-desc">PabiaNICE Conference to event non-profit dla społeczności. Wsparcie naszej inicjatywy w formie partnerstwa jest wkładem w coś wartościowego dla Twojej firmy i regionu. </p>
 
-        <div class="partner-tiers" style="margin-top:2rem;">
+        <div class="partners-closed-note" style="margin-top:2rem;">
+          <span class="closed-icon" aria-hidden="true">🔒</span>
+          <div>
+            <strong>Nabór partnerów został zamknięty</strong>
+            <span class="closed-desc">Nie przyjmujemy już nowych zgłoszeń partnerskich.</span>
+          </div>
+        </div>
+
+        <div class="partner-tiers is-closed">
           <div class="partner-tier tier-gold">
             <div class="partner-tier-badge">👑</div>
             <div>
@@ -2204,18 +2370,6 @@
           </div>
         </div>
 
-        <div style="margin-top:1.5rem;">
-          <a href="attachments/OfertaPartner.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.85rem;font-weight:600;color:var(--blue-mid);text-decoration:none;padding:0.6rem 1rem;border:1px solid rgba(26,44,255,0.2);border-radius:100px;transition:background 0.2s,border-color 0.2s;" onmouseover="this.style.background='rgba(26,44,255,0.05)';this.style.borderColor='rgba(26,44,255,0.4)'" onmouseout="this.style.background='';this.style.borderColor='rgba(26,44,255,0.2)'">
-            📥 Pobierz ofertę partnerską (PDF)
-          </a>
-        </div>
-      </div>
-
-      <div class="partners-cta-box reveal" style="margin-top:2rem;">
-        <h3>Zostań partnerem</h3>
-        <p>Napisz do nas – dobierzemy formę współpracy do Twojego budżetu i celów. Każda forma wsparcia jest dla nas cenna.</p>
-        <a href="mailto:kontakt@pabianiceconference.pl?subject=Partnerstwo – PabiaNICE Conference" class="btn-grad" style="display:inline-flex;">Napisz do nas →</a>
-        <p style="margin-top:1rem;font-size:0.8rem;color:rgba(255,255,255,0.3);">kontakt@pabianiceconference.pl</p>
       </div>
     </div>
 
@@ -2360,7 +2514,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          Oczywiście! Szukamy wolontariuszy - napisz na kontakt@pabianiceconference.pl! Jeśli chcesz wesprzeć konferencję jako partner – mamy trzy poziomy współpracy dopasowane do różnych budżetów. Napisz na kontakt@pabianiceconference.pl.
+          Nabór partnerów i wolontariuszy na tę edycję został już zamknięty, ale jeśli myślisz o współpracy przy kolejnej – daj nam znać na adres na kontakt@pabianiceconference.pl!
         </div>
       </div>
 
@@ -2458,6 +2612,71 @@
 </footer>
 
 <script>
+  // Countdown do startu konferencji (12.09.2026, 10:00 czasu lokalnego PL)
+  (function() {
+    const target = new Date('2026-09-12T10:00:00+02:00');
+    const box = document.getElementById('countdown');
+    if (!box) return;
+
+    const els = {
+      days: document.getElementById('cd-days'),
+      hours: document.getElementById('cd-hours'),
+      minutes: document.getElementById('cd-minutes'),
+      seconds: document.getElementById('cd-seconds')
+    };
+    const labels = {
+      days: document.getElementById('cd-days-label'),
+      hours: document.getElementById('cd-hours-label'),
+      minutes: document.getElementById('cd-minutes-label'),
+      seconds: document.getElementById('cd-seconds-label')
+    };
+
+    // Polska odmiana: 1 dzień, 2-4 dni, 5+ dni (z wyjątkiem 12-14)
+    function plural(n, one, few, many) {
+      if (n === 1) return one;
+      const mod10 = n % 10, mod100 = n % 100;
+      if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return few;
+      return many;
+    }
+
+    function render() {
+      const diff = target - new Date();
+
+      if (diff <= 0) {
+        box.innerHTML =
+          '<div class="countdown-live">' +
+            '<span class="live-badge"><span class="live-dot"></span>Trwa teraz</span>' +
+            '<strong>Do zobaczenia w MOK!</strong>' +
+          '</div>';
+        return true; // stop
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const d = Math.floor(totalSeconds / 86400);
+      const h = Math.floor((totalSeconds % 86400) / 3600);
+      const m = Math.floor((totalSeconds % 3600) / 60);
+      const s = totalSeconds % 60;
+
+      els.days.textContent = d;
+      els.hours.textContent = String(h).padStart(2, '0');
+      els.minutes.textContent = String(m).padStart(2, '0');
+      els.seconds.textContent = String(s).padStart(2, '0');
+
+      labels.days.textContent = plural(d, 'dzień', 'dni', 'dni');
+      labels.hours.textContent = plural(h, 'godzina', 'godziny', 'godzin');
+      labels.minutes.textContent = plural(m, 'minuta', 'minuty', 'minut');
+      labels.seconds.textContent = plural(s, 'sekunda', 'sekundy', 'sekund');
+
+      return false;
+    }
+
+    if (!render()) {
+      const timer = setInterval(function() {
+        if (render()) clearInterval(timer);
+      }, 1000);
+    }
+  })();
+
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
