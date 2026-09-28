@@ -1766,7 +1766,14 @@
   footer p { color: rgba(255,255,255,0.3); font-size: 0.78rem; }
   footer a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.78rem; transition: color 0.2s; }
   footer a:hover { color: rgba(255,255,255,0.8); }
-  .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+  }
+
+  .footer-links a { white-space: nowrap; }
   .footer-social { display: flex; gap: 0.75rem; list-style: none; }
   .footer-social a {
     display: flex; align-items: center; justify-content: center;
@@ -2177,6 +2184,13 @@
   }
 
   @media (max-width: 768px) {
+    footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+      text-align: left;
+    }
+    .footer-links { gap: 0.6rem 1.25rem; }
     .hero { padding: 5.5rem var(--gutter) 3rem; }
     .hero h1 { font-size: 3.2rem; }
     .hero-sub { text-align: left; }
@@ -2310,11 +2324,11 @@
 
   <div class="recap-actions reveal">
     <a href="https://www.youtube.com/watch?v=kCd0RD9TYoI" class="btn-grad" target="_blank" rel="noopener">Obejrzyj na YouTube →</a>
-    <a href="#edycja-2027" class="btn-ghost">Chcę być w 2027</a>
+    <a href="#edycja-2027" class="btn-ghost">Chcę wpaść w 2027!</a>
   </div>
 
   <div class="recap-social reveal">
-    <p class="recap-social-label">Zdjęcia, kulisy i zapowiedzi 2027 — znajdź nas w socialach</p>
+    <p class="recap-social-label">Zdjęcia, kulisy i zapowiedzi 2027 — znajdź nas w socialach:</p>
     <ul class="recap-social-list">
       <li>
         <a href="https://www.instagram.com/pabianice.conference/" target="_blank" rel="noopener">
@@ -2561,7 +2575,7 @@
 <section class="speakers" id="prelegenci">
   <div class="reveal">
     <p class="section-eyebrow">Prelegenci edycji 2026</p>
-    <h2 class="section-title">Ludzie z doświadczeniem<br>i historiami, których warto było wysłuchać.</h2>
+    <h2 class="section-title">Ludzie z doświadczeniem<br>i historiami, których warto wysłuchać.</h2>
     <p class="section-desc">Nasi prelegenci to praktycy, nie teoretycy. Każdy z nich ma swoje doświadczenia w obszarze budowania ścieżki kariery, przywództwa i pracy w IT, którymi dzielą się na polskich uczelniach i największych scenach konferencyjnych w Europie. Tym razem robią to w Pabianicach.</p>
   </div>
 
@@ -2803,7 +2817,7 @@
   <div class="reveal">
     <p class="section-eyebrow">Miejsce</p>
     <h2 class="section-title">Miejski Ośrodek Kultury<br>w Pabianicach</h2>
-    <p class="section-desc">Spotkaliśmy się na deskach prawdziwej sceny teatralnej – z podwyższeniem, kulisami, garderobami i balkonem. Żadnej typowej sali konferencyjnej. Było klimatycznie i… miło. Tu też planujemy edycję 2027 😊</p>
+    <p class="section-desc">Spotykamy się na deskach prawdziwej sceny teatralnej – z podwyższeniem, kulisami, garderobami i balkonem. Żadnej typowej sali konferencyjnej. Jest klimatycznie i… miło. Tak jak przystało na PabiaNICE.</p>
   </div>
 
   <div class="venue-grid">
